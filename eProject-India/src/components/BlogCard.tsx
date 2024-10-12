@@ -18,7 +18,7 @@ export const BlogCard: FC<BlogCardProps> = ({
 }) => {
   return (
     <div
-      className="w-[380px] h-[450px] rounded-xl relative shadow-md transition-all duration-500 ease-in-out hover:shadow-lg hover:translate-y-[-5px]"
+      className="w-[380px] bg-[#fff] h-[450px] rounded-xl relative shadow-md transition-all duration-500 ease-in-out hover:shadow-lg hover:translate-y-[-5px]"
       onClick={onClick}
     >
       <img
