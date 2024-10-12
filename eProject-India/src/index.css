@@ -39,3 +39,17 @@ các class từ 2 lớp trên.
 */
 @layer utilities {
 }
+
+/* Tạo cho D_ticker */
+
+@keyframes marquee {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
+}
+
+
+

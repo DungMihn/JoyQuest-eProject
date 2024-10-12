@@ -1,0 +1,10 @@
+@import '@fontsource/outfit/index.css';
+@import '@fontsource/otomanopee-one/index.css';
+
+* {
+    font-family: 'Otomanopee One', sans-serif; 
+}
+
+.font-outfit {
+    font-family: 'Outfit', sans-serif; 
+}
