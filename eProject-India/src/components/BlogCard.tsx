@@ -6,6 +6,7 @@ interface BlogCardProps {
   description: string;
   imageUrl: string;
   date: string;
+  onClick?: () => void;
 }
 
 export const BlogCard: FC<BlogCardProps> = ({
@@ -13,9 +14,13 @@ export const BlogCard: FC<BlogCardProps> = ({
   description,
   imageUrl,
   date,
+  onClick,
 }) => {
   return (
-    <div className="w-[380px] h-[450px] rounded-xl relative shadow-md transition-all duration-500 ease-in-out hover:shadow-lg hover:translate-y-[-5px]">
+    <div
+      className="w-[380px] h-[450px] rounded-xl relative shadow-md transition-all duration-500 ease-in-out hover:shadow-lg hover:translate-y-[-5px]"
+      onClick={onClick}
+    >
       <img
         src={imageUrl}
         alt={title}

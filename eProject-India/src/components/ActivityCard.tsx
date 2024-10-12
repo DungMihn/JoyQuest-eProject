@@ -1,12 +1,13 @@
 import { RoundIconButton } from "./Button";
 import { useState } from "react";
-import Subtract from "../../public/icons/HD_icon/Subtract.svg";
+import Subtract from "/icons/HD_icon/Subtract.svg";
 
 interface CardProps {
   title: string;
   description: string;
   imageUrl: string;
   defaultIcon: JSX.Element;
+  onClick?: () => void;
 }
 
 export const ActivityCard: React.FC<CardProps> = ({
@@ -14,6 +15,7 @@ export const ActivityCard: React.FC<CardProps> = ({
   description,
   imageUrl,
   defaultIcon,
+  onClick,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
@@ -27,6 +29,7 @@ export const ActivityCard: React.FC<CardProps> = ({
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
+      onClick={onClick}
     >
       <img
         src={imageUrl}
