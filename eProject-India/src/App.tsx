@@ -1,16 +1,18 @@
+import "./App.css";
+import { Route, Routes } from "react-router-dom";
+import TestPage from "./pages/TestPage";
+import MainLayout from "./layouts/MainLayout";
 
-import './App.css'
-
-function App() {
-  
-
+const App = () => {
   return (
-    <>
-      <h1 className="text-3xl font-bold underline">
-      Hello eProject!
-    </h1>
-    </>
-  )
-}
+    <div>
+      <Routes>
+        <Route path="" element={<MainLayout />}>
+          <Route path="/" element={<TestPage />} />
+        </Route>
+      </Routes>
+    </div>
+  );
+};
 
-export default App
+export default App;
