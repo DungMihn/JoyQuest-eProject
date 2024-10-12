@@ -1,69 +1,52 @@
-import {
-  FaFacebookF,
-  FaTwitter,
-  FaInstagram,
-  FaLinkedinIn,
-  FaYoutube,
-  FaPinterestP,
-} from "react-icons/fa";
-import { MdArrowOutward } from "react-icons/md";
+import { FaFacebookF, FaInstagram, FaYoutube } from "react-icons/fa";
+import { useState } from "react";
 import { RoundIconButton1 } from "./Button";
-import { useEffect, useState } from "react";
+import Marquee from "react-marquee-slider";
+import { ButtonLogo } from "./Button";
+import { ButtonArrow } from "./Button";
 
 const Footer: React.FC = () => {
-  const [iconOffset, setIconOffset] = useState(0);
-
-  // Tạo hiệu ứng icon chạy ngang
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIconOffset((prevOffset) => (prevOffset === -100 ? 0 : prevOffset - 1));
-    }, 20);
-    return () => clearInterval(interval);
-  }, []);
-
+  const [isHovered, setIsHovered] = useState(false);
+  const [isFocused, setIsFocused] = useState(false);
   const socialIcons = [
-    <FaFacebookF size={25} />,
-    <FaTwitter size={25} />,
-    <FaInstagram size={25} />,
-    <FaLinkedinIn size={25} />,
-    <FaYoutube size={25} />,
-    <FaPinterestP size={25} />,
+    "https://duruthemes.com/demo/html/bycamp/img/clients/4.svg",
+    "https://duruthemes.com/demo/html/bycamp/img/clients/3.svg",
+    "https://duruthemes.com/demo/html/bycamp/img/clients/5.svg",
+    "https://duruthemes.com/demo/html/bycamp/img/clients/1.svg",
+    "https://duruthemes.com/demo/html/bycamp/img/clients/2.svg",
   ];
 
   return (
-    <footer className="mt-8 ">
-      {/* Icon chạy ngang */}
-      <div className="bg-greenCustom text-white h-[120px]  py-5 overflow-hidden">
-        <div
-          className="flex w-max animate-scroll"
-          style={{ transform: `translateX(${iconOffset}px)` }}
+    <footer className="mt-8">
+      {/* Social Media Marquee */}
+      <div className="bg-greenCustom text-white h-[120px] py-5 overflow-hidden px-4 md:px-[15%]">
+        <Marquee
+          velocity={50}
+          resetAfterTries={200}
+          direction="rtl"
+          scatterRandomly={false}
+          onInit={() => {}}
+          onFinish={() => {}}
         >
-          {Array(10)
-            .fill(null)
-            .map((_, index) => (
-              <div key={index} className="flex space-x-8 mx-[10%]">
-                {socialIcons.map((icon, i) => (
-                  <div
-                    key={i}
-                    className="flex items-center justify-center w-[80px] h-[80px]  text-[#fff]"
-                  >
-                    {icon}
-                  </div>
-                ))}
-              </div>
-            ))}
-        </div>
+          {socialIcons.map((icon, i) => (
+            <div
+              key={i}
+              className="flex items-center justify-center w-[120px] h-[80px] mx-2 md:mx-[50px]"
+            >
+              <img
+                src={icon}
+                alt={`Social icon ${i + 1}`}
+                className="w-full h-full"
+              />
+            </div>
+          ))}
+        </Marquee>
       </div>
 
-      {/* Footer chính */}
-      <div className="bg-white h-[360px] px-[15%] flex gap-[100px] justify-between py-10">
-        {/* Cột 1: Logo, mô tả và icon */}
+      {/* Footer Content */}
+      <div className="bg-white h-auto px-4 md:px-[15%] text-[16px] flex flex-col md:flex-row gap-10 justify-between py-10">
         <div className="flex flex-col space-y-4">
-          <img
-            src="https://i.pinimg.com/control/564x/72/6e/e9/726ee946502e188083b0d1ca19b7a69c.jpg"
-            alt="logo"
-            className="w-[60px] h-auto"
-          />
+          <ButtonLogo />
           <p className="text-gray-600 font-outfit">
             Welcome to JoyQuest, your ultimate destination for exciting games
             and fun adventures.
@@ -75,9 +58,8 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        {/* Cột 2: Contact */}
         <div className="flex flex-col space-y-4">
-          <h3 className=" text-lg">Contact Us</h3>
+          <h3 className="text-lg">Contact Us</h3>
           <p className="text-gray-600 font-outfit">
             123 JoyQuest Avenue, Adventure City
           </p>
@@ -85,28 +67,35 @@ const Footer: React.FC = () => {
           <p className="text-gray-600 font-outfit">Email: info@joyquest.com</p>
         </div>
 
-        {/* Cột 3: Subscribe */}
         <div className="flex flex-col space-y-4">
-          <h3 className=" text-lg">Subscribe</h3>
+          <h3 className="text-lg">Subscribe</h3>
           <p className="text-gray-600 font-outfit">
             Stay updated with the latest games and offers by subscribing to our
             newsletter.
           </p>
-          <div className="flex relative w-[350px]">
+          <div
+            className="flex relative w-full max-w-[350px]"
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          >
             <input
-              type="Email Address"
+              type="email"
               placeholder="Enter your email"
-              className="border font-outfit bg-white w-[350px] border-greenCustom rounded-full px-6 py-3 "
+              className={`border font-outfit text-xs lg:text-[16px] bg-white w-full rounded-full px-6 py-3 ${
+                isFocused ? "border-none" : "border-greenCustom"
+              }`}
+              onFocus={() => setIsFocused(true)}
+              onBlur={() => setIsFocused(false)}
             />
-            <span className="absolute right-1">
-              <RoundIconButton1 defaultIcon={<MdArrowOutward />} />
+            <span className="absolute right-1 bottom-[2px]">
+              <ButtonArrow isHovered={isHovered} />
             </span>
           </div>
         </div>
       </div>
 
-      {/* Footer dưới */}
-      <div className="h-[110px] bg-[#f4f3f5] flex items-center justify-center ">
+      {/* Footer Bottom Section */}
+      <div className="h-[110px] bg-[#f4f3f5] flex items-center justify-center">
         <p className="text-center text-sm font-outfit">
           &copy; 2024 JoyQuest. All rights reserved. | Terms & Conditions |
           Privacy Policy

@@ -14,7 +14,7 @@ import { FiYoutube } from "react-icons/fi";
 const TestPage = () => {
   return (
     <div>
-      <div className="mx-10 my-10">
+      <div className="mx-10 py-10">
         <ButtonBooking />
       </div>
       <div className="mx-10 my-10">

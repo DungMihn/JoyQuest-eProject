@@ -7,7 +7,7 @@ function MainLayout() {
       <header>
         <Header />
       </header>
-      <main className="">
+      <main>
         <Outlet />
       </main>
       <footer>

@@ -1,6 +1,7 @@
 import { AiTwotoneCalendar } from "react-icons/ai";
 import { MdArrowOutward } from "react-icons/md";
 import { GiForestCamp } from "react-icons/gi";
+import { RiGameFill } from "react-icons/ri";
 
 interface ButtonProps {
   text?: string;
@@ -55,7 +56,7 @@ export const ButtonBooking: React.FC<ButtonProps> = ({ onClick }) => {
 
 //Button Card
 interface RoundIconButtonProps {
-  defaultIcon: JSX.Element;
+  defaultIcon?: JSX.Element;
   isHovered?: boolean;
 }
 
@@ -79,14 +80,27 @@ export const RoundIconButton: React.FC<RoundIconButtonProps> = ({
     </div>
   );
 };
-
+//Button arow
+export const ButtonArrow: React.FC<RoundIconButtonProps> = ({ isHovered }) => {
+  return (
+    <div
+      className={`w-[42px] h-[42px] rounded-full flex items-center justify-center transition-all duration-1000 transform ${
+        isHovered ? "bg-greenCustom rotate-45" : "bg-orangeCustom"
+      }`}
+    >
+      <>
+        <MdArrowOutward size={20} className="text-[#fff]" />
+      </>
+    </div>
+  );
+};
 //Around button
 export const RoundIconButton1: React.FC<RoundIconButtonProps> = ({
   defaultIcon,
 }) => {
   return (
     <div
-      className={`w-[45px] h-[45px] rounded-full flex items-center justify-center transition-all duration-300 text-[#fff] bg-orangeCustom  hover:bg-greenCustom
+      className={`w-[42px] h-[42px] rounded-full flex items-center justify-center transition-all duration-300 text-[#fff] bg-orangeCustom  hover:bg-greenCustom
       }`}
     >
       <>{defaultIcon}</>
@@ -103,6 +117,20 @@ export const RoundIcon = () => {
     >
       <>
         <GiForestCamp size={30} />
+      </>
+    </div>
+  );
+};
+
+//Button Logo
+export const ButtonLogo = () => {
+  return (
+    <div
+      className={`w-[50px] h-[50px] rounded-full flex items-center justify-center transition-all duration-300 text-[#fff] bg-greenCustom
+      }`}
+    >
+      <>
+        <RiGameFill size={25} />
       </>
     </div>
   );
