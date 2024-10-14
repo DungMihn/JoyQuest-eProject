@@ -3,6 +3,7 @@
 * {
   font-family: "Otomanopee One", sans-serif;
 }
-main {
+main,
+.booking-form {
   background-color: #f3f5f4;
 }

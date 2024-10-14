@@ -1,29 +1,40 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { gameCategories } from "../../data/gameCategories";
 import { ButtonBooking } from "./Button";
 import { ButtonLogo } from "./Button";
 import { MdMenu, MdClose } from "react-icons/md";
+import BookingForm from "./BookingForm";
 
 const Header: React.FC = () => {
   const [showDropdown, setShowDropdown] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const location = useLocation();
+  const dropdownTimeout = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleMouseEnter = () => setShowDropdown(true);
-  const handleMouseLeave = () => setShowDropdown(false);
+  const openModal = () => setIsModalOpen(true);
+  const closeModal = () => setIsModalOpen(false);
+
+  const handleMouseEnter = () => {
+    if (dropdownTimeout.current) {
+      clearTimeout(dropdownTimeout.current);
+    }
+    setShowDropdown(true);
+  };
+
+  const handleMouseLeave = () => {
+    dropdownTimeout.current = setTimeout(() => {
+      setShowDropdown(false);
+    }, 200);
+  };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 100) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
+      setIsScrolled(window.scrollY > 100);
     };
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
@@ -40,10 +51,10 @@ const Header: React.FC = () => {
       }`}
     >
       {/* Logo Section */}
-      <div className="flex items-center ">
+      <div className="flex items-center">
         <ButtonLogo />
         <span className="text-xl font-bold ml-2 lg:block md:hidden">
-          <span className="text-greenCustom ">Joy</span>Quest
+          <span className="text-greenCustom">Joy</span>Quest
         </span>
       </div>
 
@@ -58,7 +69,7 @@ const Header: React.FC = () => {
       <nav
         className={`fixed md:static top-0 left-0 w-full h-auto bg-white md:bg-transparent flex flex-col md:flex-row items-center justify-center md:space-x-6 transition-transform duration-700 transform ${
           isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0`}
+        } md:translate-x-0 z-[1000]`}
       >
         <Link
           to="/home"
@@ -85,8 +96,12 @@ const Header: React.FC = () => {
           Itinerary
         </Link>
 
-        {/* Activities Dropdown */}
-        <div className="relative" onMouseEnter={handleMouseEnter}>
+        {/* Dropdown container */}
+        <div
+          className="relative z-[1050]"
+          onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}
+        >
           <div
             className={`text-[16px] hover:text-orangeCustom ${
               isActive("/activities") ? "text-orangeCustom" : ""
@@ -95,10 +110,7 @@ const Header: React.FC = () => {
             Activities
           </div>
           {showDropdown && (
-            <ul
-              className="absolute w-[200px] hidden lg:block h-auto bg-white shadow-lg rounded-md mt-2"
-              onMouseLeave={handleMouseLeave}
-            >
+            <ul className="absolute left-0 w-[200px] lg:block h-auto bg-white shadow-lg rounded-md mt-2 z-[1050]">
               {gameCategories.map((category) => (
                 <li key={category.id}>
                   <Link
@@ -138,9 +150,11 @@ const Header: React.FC = () => {
           Contact
         </Link>
       </nav>
+
       {/* Booking Button */}
       <div className="hidden lg:block ml-auto w-[200px]">
-        <ButtonBooking />
+        <ButtonBooking onClick={openModal} />
+        <BookingForm isOpen={isModalOpen} onClose={closeModal} />
       </div>
 
       {/* Mobile Menu Links */}

@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="mt-8">
+    <footer className="">
       {/* Social Media Marquee */}
       <div className="bg-greenCustom text-white h-[120px] py-5 overflow-hidden px-4 md:px-[15%]">
         <Marquee
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col space-y-4">
           <h3 className="text-lg">Contact Us</h3>
           <p className="text-gray-600 font-outfit">
-            123 JoyQuest Avenue, Adventure City
+            115 Le Thanh Ton, Thach Thang, Hai Chau, Da Nang, Vietnam
           </p>
           <p className="text-gray-600 font-outfit">Phone: +1 234 567 890</p>
           <p className="text-gray-600 font-outfit">Email: info@joyquest.com</p>

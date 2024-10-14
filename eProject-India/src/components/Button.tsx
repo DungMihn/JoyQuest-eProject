@@ -5,16 +5,24 @@ import { RiGameFill } from "react-icons/ri";
 
 interface ButtonProps {
   text?: string;
+  icon?: JSX.Element;
   onClick?: () => void;
 }
 //Button chung nền cam sang xanh
-export const CustomButton: React.FC<ButtonProps> = ({ text, onClick }) => {
+export const CustomButton: React.FC<ButtonProps> = ({
+  text,
+  icon,
+  onClick,
+}) => {
   return (
     <button
-      className="flex items-center justify-center bg-[#f2682a] text-[#fff] font-medium py-[15px] px-[40px] rounded-full transition-transform duration-300 hover:bg-greenCustom hover:text-white  border-none text-[15px]"
+      className="flex items-center justify-center bg-[#f2682a] text-[#fff] font-medium py-[15px] px-[40px] rounded-full transition-transform hover:-translate-y-1 duration-300 hover:bg-greenCustom hover:text-white  border-none text-[15px]"
       onClick={onClick}
     >
-      {text}
+      <div className="flex gap-3">
+        {icon}
+        {text}
+      </div>
     </button>
   );
 };
