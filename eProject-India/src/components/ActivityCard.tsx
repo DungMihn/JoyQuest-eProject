@@ -1,35 +1,41 @@
 import { RoundIconButton } from "./Button";
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import Subtract from "/icons/HD_icon/Subtract.svg";
 
 interface CardProps {
+  id: number;
   title: string;
   description: string;
   imageUrl: string;
   defaultIcon: JSX.Element;
-  onClick?: () => void;
 }
 
 export const ActivityCard: React.FC<CardProps> = ({
+  id,
   title,
   description,
   imageUrl,
   defaultIcon,
-  onClick,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(`/activity/${id}`);
+  };
 
   return (
     <div
       className="w-[380px] h-[450px] relative transition-all duration-500 ease-in-out hover:translate-y-[-8px]"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onClick={handleClick}
       style={{
         backgroundImage: `url(${Subtract})`,
         backgroundSize: "cover",
         backgroundPosition: "center",
       }}
-      onClick={onClick}
     >
       <img
         src={imageUrl}

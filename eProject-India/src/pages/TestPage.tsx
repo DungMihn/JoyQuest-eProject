@@ -33,6 +33,7 @@ const TestPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-20">
         {activities.map((activity, index) => (
           <ActivityCard
+            id={activity.id}
             key={index}
             title={activity.title}
             description={activity.description}
@@ -41,10 +42,11 @@ const TestPage = () => {
           />
         ))}
       </div>
-      <div className="grid grid-cols-2  gap-6 m-20">
+      <div className="grid grid-cols-2 gap-6 m-20">
         {blogs.map((blog, index) => (
           <BlogCard
             key={index}
+            id={blog.id}
             title={blog.title}
             description={blog.description}
             imageUrl={blog.imageUrl}
@@ -55,6 +57,7 @@ const TestPage = () => {
       <div className="grid grid-cols-2 gap-60 m-20 ">
         {itineraries.map((itinerary, index) => (
           <ItineraryCard
+            id={itinerary.id}
             key={index}
             title={itinerary.title}
             imageUrl={itinerary.imageUrl}

@@ -5,22 +5,28 @@ import {
   GiBackpack,
   GiForestCamp,
 } from "react-icons/gi";
-
 import { CustomButton } from "./Button";
+import { useNavigate } from "react-router-dom";
 
 interface ItineraryCardProps {
   title: string;
   price: string;
   imageUrl: string;
-  onButtonClick?: () => void;
+  id: number;
 }
 
 export const ItineraryCard: React.FC<ItineraryCardProps> = ({
   title,
   price,
   imageUrl,
+  id,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
+  const navigate = useNavigate();
+
+  const handleButtonClick = () => {
+    navigate(`/itinerary/${id}`);
+  };
 
   return (
     <div
@@ -51,7 +57,7 @@ export const ItineraryCard: React.FC<ItineraryCardProps> = ({
         </div>
 
         <div className="flex justify-between items-center gap-3 mt-4">
-          <CustomButton text="Details" />
+          <CustomButton text="Details" onClick={handleButtonClick} />
           <div className="flex flex-col">
             <span className="text-[24px]">{price}</span>
             <span className="font-outfit">per day</span>

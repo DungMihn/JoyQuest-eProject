@@ -1,5 +1,6 @@
 export const itineraries = [
   {
+    id: 1,
     title: "Tree House Tent",
     price: "$400",
     imageUrl:
@@ -29,6 +30,7 @@ Lorem pretium fermentum quam the miss sit amet cursus ante sollicitudin velen mo
     ],
   },
   {
+    id: 2,
     title: "Family Caravan",
     price: "$300",
     imageUrl:
@@ -58,6 +60,7 @@ Lorem pretium fermentum quam the miss sit amet cursus ante sollicitudin velen mo
     ],
   },
   {
+    id: 3,
     title: "Tree House Tent",
     price: "$700",
     imageUrl:
@@ -87,6 +90,7 @@ Lorem pretium fermentum quam the miss sit amet cursus ante sollicitudin velen mo
     ],
   },
   {
+    id: 4,
     title: "Family Caravan",
     price: "$600",
     imageUrl:
@@ -116,6 +120,7 @@ Lorem pretium fermentum quam the miss sit amet cursus ante sollicitudin velen mo
     ],
   },
   {
+    id: 5,
     title: "Studio Cabins",
     price: "$200",
     imageUrl:
@@ -145,6 +150,7 @@ Lorem pretium fermentum quam the miss sit amet cursus ante sollicitudin velen mo
     ],
   },
   {
+    id: 6,
     title: "Bubble Tent",
     price: "$600",
     imageUrl:
