@@ -46,7 +46,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`flex items-center justify-between h-[60px] md:h-[100px] px-4 md:px-[100px] shadow-md bg-white transition-all duration-300 ${
+      className={`flex  items-center justify-between h-[60px] md:h-[100px] px-4 md:px-[100px] shadow-md bg-white transition-all duration-300 ${
         isScrolled ? "fixed top-0 left-0 w-full z-50" : ""
       }`}
     >
@@ -58,22 +58,15 @@ const Header: React.FC = () => {
         </span>
       </div>
 
-      {/* Mobile Menu Toggle */}
-      <div className="md:hidden z-10">
-        <button onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? <MdClose size={30} /> : <MdMenu size={30} />}
-        </button>
-      </div>
-
       {/* Navigation Links */}
       <nav
-        className={`fixed md:static top-0 left-0 w-full h-auto bg-white md:bg-transparent flex flex-col md:flex-row items-center justify-center md:space-x-6 transition-transform duration-700 transform ${
-          isMobileMenuOpen ? "translate-x-0" : "-translate-x-full"
-        } md:translate-x-0 z-[1000]`}
+        className={`fixed md:static top-0 left-0 w-full h-auto bg-white md:bg-transparent flex flex-col md:flex-row items-center justify-center md:space-x-2 lg:space-x-6 transition-transform duration-700 transform ${
+          isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
+        } md:translate-x-0 z-[4000]`}
       >
         <Link
           to="/home"
-          className={`text-[16px] hover:text-orangeCustom ${
+          className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/") ? "text-orangeCustom" : ""
           }`}
         >
@@ -81,7 +74,7 @@ const Header: React.FC = () => {
         </Link>
         <Link
           to="/about"
-          className={`text-[16px] hover:text-orangeCustom ${
+          className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/about") ? "text-orangeCustom" : ""
           }`}
         >
@@ -89,7 +82,7 @@ const Header: React.FC = () => {
         </Link>
         <Link
           to="/itinerary"
-          className={`text-[16px] hover:text-orangeCustom ${
+          className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/itinerary") ? "text-orangeCustom" : ""
           }`}
         >
@@ -103,7 +96,7 @@ const Header: React.FC = () => {
           onMouseLeave={handleMouseLeave}
         >
           <div
-            className={`text-[16px] hover:text-orangeCustom ${
+            className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
               isActive("/activities") ? "text-orangeCustom" : ""
             }`}
           >
@@ -127,7 +120,7 @@ const Header: React.FC = () => {
 
         <Link
           to="/faqs"
-          className={`text-[16px] hover:text-orangeCustom ${
+          className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/faqs") ? "text-orangeCustom" : ""
           }`}
         >
@@ -135,7 +128,7 @@ const Header: React.FC = () => {
         </Link>
         <Link
           to="/blog"
-          className={`text-[16px] hover:text-orangeCustom ${
+          className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/blog") ? "text-orangeCustom" : ""
           }`}
         >
@@ -143,23 +136,28 @@ const Header: React.FC = () => {
         </Link>
         <Link
           to="/contact"
-          className={`text-[16px] hover:text-orangeCustom ${
+          className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/contact") ? "text-orangeCustom" : ""
           }`}
         >
           Contact
         </Link>
       </nav>
-
       {/* Booking Button */}
-      <div className="hidden lg:block ml-auto w-[200px]">
+      <div className="hidden md:block lg:w-[200px] md:w-[150px]">
         <ButtonBooking onClick={openModal} />
         <BookingForm isOpen={isModalOpen} onClose={closeModal} />
+      </div>
+      {/* Mobile Menu Toggle */}
+      <div className="md:hidden z-[5000]">
+        <button onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <MdClose size={30} /> : <MdMenu size={30} />}
+        </button>
       </div>
 
       {/* Mobile Menu Links */}
       {isMobileMenuOpen && (
-        <div className="md:hidden flex flex-col items-center bg-white absolute top-[60px] left-0 right-0 shadow-lg">
+        <div className="md:hidden flex flex-col items-center bg-white absolute top-[60px] left-0 right-0 shadow-lg z-[4000]">
           <Link
             to="/home"
             className={`text-[16px] hover:text-orangeCustom ${

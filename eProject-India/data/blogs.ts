@@ -1,4 +1,15 @@
-export const blogs = [
+export interface Blog {
+  id: number;
+  title: string;
+  writer_image: string;
+  writer_name: string;
+  date: string;
+  content: string;
+  description: string;
+  imageUrl: string;
+  images: { id: number; image: string }[];
+}
+export const blogs: Blog[] = [
   {
     id: 1,
     title: "How to Build a Campfire in 5 Easy Steps",

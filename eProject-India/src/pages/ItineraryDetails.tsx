@@ -14,18 +14,18 @@ const ItineraryDetails: React.FC = () => {
   }
 
   return (
-    <div className="">
+    <div>
       {/* Thumbnail Section */}
       <div
         className="h-[382px] relative"
         style={{
-          backgroundImage: `url(https://duruthemes.com/demo/html/bycamp/img/slider/08.jpg)`,
+          backgroundImage: `url(https://duruthemes.com/demo/html/bycamp/img/slider/08.jpg)`, // You might want to replace this with itinerary.imageUrl
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
       >
-        <div className="absolute w-[1000px] h-full px-[10%] top-1/3 z-20 items-center">
-          <span className="text-[45px] z-20 text-[#fff]">
+        <div className="absolute w-full h-full flex justify-center items-center px-4">
+          <span className="text-[30px] md:text-[45px] z-20 text-[#fff] text-center">
             {itinerary.title}
           </span>
         </div>
@@ -33,7 +33,7 @@ const ItineraryDetails: React.FC = () => {
       </div>
 
       {/* Content Section */}
-      <div className="mt-6 container px-[10%] p-6 text-[18px]">
+      <div className="mt-6 container mx-auto px-4 md:px-[10%] p-6 text-[18px]">
         <div>
           <h2 className="text-2xl mb-5">About {itinerary.title}</h2>
           <p className="font-outfit mb-5">{itinerary.content}</p>
@@ -44,7 +44,7 @@ const ItineraryDetails: React.FC = () => {
           <h2 className="text-2xl mb-3">Suggested Activities</h2>
           <ul className="list-disc pl-5">
             {itinerary.suggestedActivities.map((activity, index) => (
-              <li className=" font-outfit" key={index}>
+              <li className="font-outfit" key={index}>
                 {activity}
               </li>
             ))}
@@ -54,9 +54,8 @@ const ItineraryDetails: React.FC = () => {
         {/* Additional Images */}
         <div className="mt-10">
           <h2 className="text-2xl mb-10">Additional Images</h2>
-          <div className="grid grid-cols-2 gap-10 mr-[20%]">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {itinerary.images.map((img, index) => {
-              // For the top two images
               if (index < 2) {
                 return (
                   <div className="overflow-hidden rounded-lg" key={img.id}>
@@ -71,7 +70,7 @@ const ItineraryDetails: React.FC = () => {
               if (index === 2) {
                 return (
                   <div
-                    className="col-span-2 overflow-hidden rounded-lg"
+                    className="col-span-2 md:col-span-3 overflow-hidden rounded-lg"
                     key={img.id}
                   >
                     <img
@@ -82,7 +81,6 @@ const ItineraryDetails: React.FC = () => {
                   </div>
                 );
               }
-
               return null;
             })}
           </div>

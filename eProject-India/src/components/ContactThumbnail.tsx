@@ -11,13 +11,13 @@ function ContactThumbnail() {
           backgroundPosition: "center",
         }}
       >
-        <span className="absolute w-full h-full text-[45px] z-20 text-[#fff] flex justify-center align-middle items-center">
+        <span className="absolute w-full h-full text-[30px] md:text-[45px] z-20 text-[#fff] flex justify-center items-center">
           Contact Us
         </span>
         <div className="absolute inset-0 bg-black opacity-30"></div>
-        <div className="absolute w-full bottom-[-40%] flex gap-4 justify-center">
+        <div className="absolute hidden md:visible md:flex w-full bottom-[-40%] flex-col md:flex-row gap-4 justify-center">
           {/* Email Card */}
-          <div className="group flex flex-col align-middle w-[390px] h-[220px] bg-white shadow-lg rounded-lg p-6 transition-transform hover:-translate-y-2 duration-500 hover:bg-orangeCustom hover:text-white">
+          <div className="group flex flex-col w-[90%] md:w-[300px] h-[220px] bg-white shadow-lg rounded-lg p-6 transition-transform hover:-translate-y-2 duration-500 hover:bg-orangeCustom hover:text-white">
             <div className="text-5xl text-orangeCustom my-4 transition-colors duration-300 group-hover:text-[#fff]">
               <GrMail />
             </div>
@@ -27,7 +27,7 @@ function ContactThumbnail() {
             </div>
           </div>
           {/* Address Card */}
-          <div className="group flex flex-col w-[390px] h-[220px] bg-white shadow-lg rounded-lg p-6 transition-transform hover:-translate-y-2 duration-500 hover:bg-orangeCustom hover:text-white">
+          <div className="group flex flex-col w-[90%] md:w-[300px] h-[220px] bg-white shadow-lg rounded-lg p-6 transition-transform hover:-translate-y-2 duration-500 hover:bg-orangeCustom hover:text-white">
             <div className="text-5xl text-orange-500 my-4 transition-colors duration-300 group-hover:text-[#fff]">
               <GrLocation />
             </div>
@@ -39,7 +39,7 @@ function ContactThumbnail() {
             </div>
           </div>
           {/* Phone Card */}
-          <div className="group flex flex-col w-[390px] h-[220px] bg-greenCustom shadow-lg rounded-lg p-6 text-white transition-transform hover:-translate-y-2 duration-500 hover:bg-orangeCustom">
+          <div className="group flex flex-col w-[90%] md:w-[300px] h-[220px] bg-greenCustom shadow-lg rounded-lg p-6 text-white transition-transform hover:-translate-y-2 duration-500 hover:bg-orangeCustom">
             <div className="text-5xl my-4 transition-colors duration-300 group-hover:text-[#fff]">
               <GrPhone />
             </div>
