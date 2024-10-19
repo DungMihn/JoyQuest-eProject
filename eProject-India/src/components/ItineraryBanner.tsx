@@ -40,7 +40,7 @@ const ItineraryBanner = () => {
         loop={true}
         speed={850}
         centeredSlides={true}
-        slidesPerView={1} // Số lượng slide hiển thị
+        slidesPerView={1.5} // Số lượng slide hiển thị
         breakpoints={{
           640: {
             slidesPerView: 1.5, // Hiển thị 1.5 slides trên màn hình nhỏ hơn
