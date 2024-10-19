@@ -1,41 +1,46 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-/* 
-css mặc định cho các thẻ 
-ví: input, button, a, textarea, h1-h6
-*/
 @layer base {
-  h2 {
-    @apply text-3xl font-bold;
-  }
   input {
-    @apply border border-slate-400 rounded py-1 px-2;
+    @apply border-[1px] border-[#363636] bg-[#f6f6f6] rounded-sm p-1;
+  }
+  button:disabled {
+    @apply border-[1px] border-[#363636] bg-[#8e8e8e] text-[#fff];
   }
 }
 
-/*
-Để tạo ra các class cho từng component
-*/
-@layer components {
-  .btn {
-    @apply text-slate-900 px-3 py-1 rounded bg-transparent border-0 cursor-pointer;
-  }
-  .btn-default {
-    @apply text-gray-900 bg-gray-300;
-  }
-  .btn-primary {
-    @apply text-white bg-blue-700;
-  }
+.swiper-pagination-bullet{
+  @apply w-4 h-4 bg-greenCustom
+}
 
-  .btn-danger {
-    @apply text-white bg-red-600;
+@keyframes bounce-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
 }
-/*
-Các class tiện ích bổ sung, ghi đè lại một phần
-các class từ 2 lớp trên.
-*/
-@layer utilities {
+
+.animate-bounce-scale {
+  animation: bounce-scale 3s infinite;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce 5s infinite; /* Chỉnh 2s để làm chậm hiệu ứng */
+}
+
+.custom-itinerary-card {
+  width: 546px !important;
+  height: 365px !important;
 }
