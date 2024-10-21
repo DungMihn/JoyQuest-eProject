@@ -1,8 +1,7 @@
 import React, { useState, useEffect, useRef } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { gameCategories } from "../../data/gameCategories";
-import { ButtonBooking } from "./Button";
-import { ButtonLogo } from "./Button";
+import { ButtonBooking, ButtonLogo } from "./Button";
 import { MdMenu, MdClose } from "react-icons/md";
 import BookingForm from "./BookingForm";
 
@@ -46,7 +45,7 @@ const Header: React.FC = () => {
 
   return (
     <header
-      className={`flex  items-center justify-between h-[60px] md:h-[100px] px-4 md:px-[100px] shadow-md bg-white transition-all duration-300 ${
+      className={`flex items-center justify-between h-[60px] md:h-[100px] px-4 md:px-[100px] shadow-md bg-white transition-all duration-300 ${
         isScrolled ? "fixed top-0 left-0 w-full z-50" : ""
       }`}
     >
@@ -56,6 +55,13 @@ const Header: React.FC = () => {
         <span className="text-xl font-bold ml-2 lg:block md:hidden">
           <span className="text-greenCustom">Joy</span>Quest
         </span>
+      </div>
+
+      {/* Mobile Menu Toggle */}
+      <div className="md:hidden z-[5000]">
+        <button onClick={toggleMobileMenu}>
+          {isMobileMenuOpen ? <MdClose size={30} /> : <MdMenu size={30} />}
+        </button>
       </div>
 
       {/* Navigation Links */}
@@ -69,6 +75,7 @@ const Header: React.FC = () => {
           className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/") ? "text-orangeCustom" : ""
           }`}
+          onClick={() => setIsMobileMenuOpen(false)}
         >
           Home
         </Link>
@@ -77,6 +84,7 @@ const Header: React.FC = () => {
           className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/about") ? "text-orangeCustom" : ""
           }`}
+          onClick={() => setIsMobileMenuOpen(false)}
         >
           About
         </Link>
@@ -85,6 +93,7 @@ const Header: React.FC = () => {
           className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/itinerary") ? "text-orangeCustom" : ""
           }`}
+          onClick={() => setIsMobileMenuOpen(false)}
         >
           Itinerary
         </Link>
@@ -109,6 +118,7 @@ const Header: React.FC = () => {
                   <Link
                     to={`/activities/${category.slug}`}
                     className="block font-outfit px-4 py-2 hover:text-orangeCustom"
+                    onClick={() => setIsMobileMenuOpen(false)}
                   >
                     {category.name}
                   </Link>
@@ -123,6 +133,7 @@ const Header: React.FC = () => {
           className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/faqs") ? "text-orangeCustom" : ""
           }`}
+          onClick={() => setIsMobileMenuOpen(false)}
         >
           FAQs
         </Link>
@@ -131,6 +142,7 @@ const Header: React.FC = () => {
           className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/blog") ? "text-orangeCustom" : ""
           }`}
+          onClick={() => setIsMobileMenuOpen(false)}
         >
           Blog
         </Link>
@@ -139,25 +151,21 @@ const Header: React.FC = () => {
           className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/contact") ? "text-orangeCustom" : ""
           }`}
+          onClick={() => setIsMobileMenuOpen(false)}
         >
           Contact
         </Link>
       </nav>
-      {/* Booking Button */}
+
+      {/* Booking Button for Desktop */}
       <div className="hidden md:block lg:w-[200px] md:w-[150px]">
         <ButtonBooking onClick={openModal} />
         <BookingForm isOpen={isModalOpen} onClose={closeModal} />
       </div>
-      {/* Mobile Menu Toggle */}
-      <div className="md:hidden z-[5000]">
-        <button onClick={toggleMobileMenu}>
-          {isMobileMenuOpen ? <MdClose size={30} /> : <MdMenu size={30} />}
-        </button>
-      </div>
 
-      {/* Mobile Menu Links */}
+      {/* Mobile Menu Links
       {isMobileMenuOpen && (
-        <div className="md:hidden flex flex-col items-center bg-white absolute top-[60px] left-0 right-0 shadow-lg z-[4000]">
+        <div className="md:hidden flex flex-col items-center bg-white absolute top-[30px] left-0 right-0 shadow-lg z-[4000]">
           <Link
             to="/home"
             className={`text-[16px] hover:text-orangeCustom ${
@@ -213,7 +221,7 @@ const Header: React.FC = () => {
             Contact
           </Link>
         </div>
-      )}
+      )} */}
     </header>
   );
 };
