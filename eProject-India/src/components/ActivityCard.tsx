@@ -44,8 +44,8 @@ export const ActivityCard: React.FC<CardProps> = ({
       />
 
       <div className="p-4 md:p-6">
-        <h2 className="text-lg md:text-xl lg:text-[23px] mb-2">{title}</h2>
-        <p className="text-sm md:text-[17px] lg:text-[19px] text-[#484848] font-outfit">
+        <h2 className="text-[13px] md:text-xl lg:text-[23px] mb-2">{title}</h2>
+        <p className="text-xs md:text-[17px] lg:text-[19px] text-[#484848] font-outfit">
           {description}
         </p>
       </div>
