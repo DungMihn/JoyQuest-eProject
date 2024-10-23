@@ -16,7 +16,7 @@ export const CustomButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className="flex items-center justify-center bg-[#f2682a] text-[#fff] font-medium py-[15px] px-[40px] rounded-full transition-transform hover:-translate-y-1 duration-300 hover:bg-greenCustom hover:text-white  border-none text-[15px]"
+      className="flex items-center justify-center bg-[#f2682a] text-[#fff] p-[5px] font-medium md:py-[15px] md:px-[40px] rounded-full transition-transform hover:-translate-y-1 duration-300 hover:bg-greenCustom hover:text-white  border-none text-[10px] md:text-[15px]"
       onClick={onClick}
     >
       <div className="flex gap-3">
@@ -74,7 +74,7 @@ export const RoundIconButton: React.FC<RoundIconButtonProps> = ({
 }) => {
   return (
     <div
-      className={`w-[60px] h-[60px] rounded-full flex items-center justify-center transition-all duration-300 ${
+      className={` w-[42px] h-[42px] lg:w-[60px] lg:h-[60px] rounded-full flex items-center justify-center transition-all duration-300 ${
         isHovered ? "bg-orangeCustom" : "bg-greenCustom"
       }`}
     >

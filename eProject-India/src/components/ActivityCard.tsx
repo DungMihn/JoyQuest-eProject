@@ -27,7 +27,7 @@ export const ActivityCard: React.FC<CardProps> = ({
 
   return (
     <div
-      className="w-[380px] h-[450px] relative transition-all duration-500 ease-in-out hover:translate-y-[-8px]"
+      className="w-full md:w-[300px] lg:w-[380px] h-auto lg:h-[450px] relative transition-all duration-500 ease-in-out hover:translate-y-[-8px] cursor-pointer"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       onClick={handleClick}
@@ -40,15 +40,17 @@ export const ActivityCard: React.FC<CardProps> = ({
       <img
         src={imageUrl}
         alt={title}
-        className="w-[380px] h-[200px] rounded-t-xl object-cover"
+        className="w-full h-[130px] md:h-[200px] rounded-t-xl object-cover"
       />
 
-      <div className="p-6">
-        <h2 className="text-[23px] mb-2">{title}</h2>
-        <p className="text-[#484848] text-[19px] font-outfit">{description}</p>
+      <div className="p-4 md:p-6">
+        <h2 className="text-lg md:text-xl lg:text-[23px] mb-2">{title}</h2>
+        <p className="text-sm md:text-[17px] lg:text-[19px] text-[#484848] font-outfit">
+          {description}
+        </p>
       </div>
 
-      <div className="absolute bottom-[-8px] right-[-3px] z-10">
+      <div className="absolute bottom-[-8px] right-[-3px] z-10 ">
         <RoundIconButton isHovered={isHovered} defaultIcon={defaultIcon} />
       </div>
     </div>
