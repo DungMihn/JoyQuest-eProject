@@ -1,5 +1,8 @@
+# Node modules
+node_modules/
+
 # Logs
-logs
+logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
@@ -7,18 +10,35 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-node_modules
-dist
-dist-ssr
+# Dist folder (sản phẩm build)
+dist/
+dist-ssr/
+build/
+
+# Tệp môi trường
+.env
+
+# Tệp cục bộ
 *.local
 
+# Temporary files
+tmp/
+temp/
+
+# Cache và các file tạm
+.npm
+.eslintcache
+
 # Editor directories and files
-.vscode/*
+.vscode/
 !.vscode/extensions.json
-.idea
-.DS_Store
+.idea/
 *.suo
 *.ntvs*
 *.njsproj
 *.sln
+*.swp
 *.sw?
+
+# MacOS system files
+.DS_Store

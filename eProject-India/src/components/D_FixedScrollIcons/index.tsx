@@ -7,19 +7,19 @@ const D_FixedScrollIcons: React.FC = () => {
     <div className="fixed bottom-36 right-4 flex flex-col space-y-3">
       <a
         href="https://m.me"
-        className="bg-blue-600 text-white rounded-full p-2 shadow-lg hover:bg-blue-700 transition transform hover:scale-105"
+        className="bg-blue-600 text-white rounded-full p-2 shadow-lg hover:bg-blue-700 transition transform hover:scale-105 duration-300 hover:-translate-y-1"
       >
         <FaFacebookMessenger size={24} />
       </a>
       <a
         href="https://zalo.me"
-        className="bg-blue-500 text-white rounded-full p-2 shadow-lg hover:bg-blue-600 transition transform hover:scale-105"
+        className="bg-blue-500 text-white rounded-full p-2 shadow-lg hover:bg-blue-600 transition transform hover:scale-105 duration-300 hover:-translate-y-1"
       >
         <SiZalo size={24} />
       </a>
       <a
         href="tel:+123456789"
-        className="bg-blue-700 text-white rounded-full p-2 shadow-lg hover:bg-blue-800 transition transform hover:scale-105"
+        className="bg-blue-700 text-white rounded-full p-2 shadow-lg hover:bg-blue-800 transition transform hover:scale-105 duration-300 hover:-translate-y-1"
       >
         <FaPhone size={24} />
       </a>

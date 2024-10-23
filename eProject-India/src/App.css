@@ -1,5 +1,7 @@
-@import '@fontsource/outfit/index.css';
-@import '@fontsource/otomanopee-one/index.css';
+@import url("https://fonts.googleapis.com/css?family=Otomanopee+One");
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300&display=swap");
+/* @import '@fontsource/outfit/index.css';
+@import '@fontsource/otomanopee-one/index.css'; */
 
 * {
     font-family: 'Otomanopee One', sans-serif; 
@@ -7,4 +9,8 @@
 
 .font-outfit {
     font-family: 'Outfit', sans-serif; 
+}
+
+main {
+    background-color: #f3f5f4; /* Kết hợp từ HD_master */
 }

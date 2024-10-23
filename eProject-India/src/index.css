@@ -4,17 +4,12 @@
 
 /* 
 css mặc định cho các thẻ 
-ví: input, button, a, textarea, h1-h6
+ví: input, button, a, textarea, h1-h6
 */
 @layer base {
   h2 {
     @apply text-3xl font-bold;
-  }
-  input {
-    @apply border border-slate-400 rounded py-1 px-2;
-  }
-}
-
+  }}
 /*
 Để tạo ra các class cho từng component
 */
@@ -28,11 +23,11 @@ ví: input, button, a, textarea, h1-h6
   .btn-primary {
     @apply text-white bg-blue-700;
   }
-
   .btn-danger {
     @apply text-white bg-red-600;
   }
 }
+
 /*
 Các class tiện ích bổ sung, ghi đè lại một phần
 các class từ 2 lớp trên.
@@ -41,7 +36,6 @@ các class từ 2 lớp trên.
 }
 
 /* Tạo cho D_ticker */
-
 @keyframes marquee {
   0% { transform: translateX(100%); }
   100% { transform: translateX(-100%); }
@@ -50,6 +44,3 @@ các class từ 2 lớp trên.
 .animate-marquee {
   animation: marquee 15s linear infinite;
 }
-
-
-

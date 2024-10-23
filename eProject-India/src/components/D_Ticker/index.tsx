@@ -89,7 +89,7 @@ const D_ticker: React.FC = () => {
         isVisible ? 'translate-y-0 opacity-100' : 'translate-y-full opacity-0'
       } ${isVisible ? 'bg-orange-500' : 'bg-gray-800'}`}  // bg color when shown or hidden
     >
-      <div className="font-outfit flex items-center space-x-4 text-sm">
+      <div className="font-outfit flex items-center space-x-4 text-xs md:text-sm">
         {data ? (
           <>
             <h1 className="text-white font-outfit">{data.name}</h1>

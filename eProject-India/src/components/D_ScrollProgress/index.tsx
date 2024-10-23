@@ -13,8 +13,8 @@ const D_ScrollProgress: React.FC = () => {
     const progress = pathLength - scrollFraction * pathLength;
     setScroll(progress);
 
-    // Show the button only after scrolling 20%
-    setIsVisible(scrollFraction > 0.2);
+    // Show the button only after scrolling 10%
+    setIsVisible(scrollFraction > 0.1);
   };
 
   useEffect(() => {
@@ -25,11 +25,14 @@ const D_ScrollProgress: React.FC = () => {
   return (
     <div
       className={`fixed bottom-14 right-4 cursor-pointer transform transition-all duration-300 ease-out ${
-        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+        isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6 '
       }`}
       onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
     >
-      <svg className="w-12 h-12" viewBox="-1 -1 102 102">
+      <svg 
+        className="w-12 h-12 transition-transform duration-300 hover:-translate-y-1 hover:scale-110" 
+        viewBox="-1 -1 102 102"
+      >
         <path
           d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"
           className="stroke-current text-gray-300"

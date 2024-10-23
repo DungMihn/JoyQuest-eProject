@@ -1,30 +1,65 @@
 import React, { useState } from 'react';
 import { FaCirclePlay } from 'react-icons/fa6';
+import { ActivityCard } from '../components/ActivityCard';
+import Pagination from '../components/D_Pagination';
+import { activities } from '../../data/activities';
+
+const ITEMS_PER_PAGE = 6;
 
 const D_FemalesPage: React.FC = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
-
+  
   const handleCloseVideo = () => {
     setIsVideoVisible(false);
+  };
+  {/* Pagination Logic*/}
+  const [currentPage, setCurrentPage] = useState(1);
+  const totalPages = Math.ceil(activities.length / ITEMS_PER_PAGE);
+  const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
+  const currentItems = activities.slice(startIndex, startIndex + ITEMS_PER_PAGE);
+  const handlePageChange = (page: number) => {
+    setCurrentPage(page);
   };
 
   return (
     <div>
       {/* Section 1: Video Header */}
-        <div className="relative h-96">
+        <div className="relative h-60 md:h-96">
         <video className="absolute inset-0 w-full h-full object-cover" playsInline autoPlay loop muted>
             <source src="https://duruthemes.com/demo/html/bycamp/video.mp4" type="video/mp4" />
             {/* <source src="https://duruthemes.com/demo/html/bycamp/video.webm" type="video/webm" /> */}
         </video>
         <div className="bg-black bg-opacity-30 w-full h-full flex justify-center items-center">
-            <h3 className="text-5xl text-white font-bold drop-shadow-lg">Females Activities</h3>
+            <h3 className="text-3xl md:text-5xl text-white font-bold drop-shadow-lg">Females Activities</h3>
         </div>
         </div>
 
       {/* Middle Section: ProductCard */}
-      <div className="font-outfit my-8 flex justify-center">
-        PHẦN SẢN PHẨM 
+      {/* ProductCard Section */}
+      <div className="mt-16 flex justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-6 lg:mx-10">
+          {currentItems.map((activity, index) => (
+            <ActivityCard
+            id={activity.id}
+              key={index}
+              title={"womens-games"}
+              description={activity.description}
+              imageUrl={activity.imageUrl}
+              defaultIcon={activity.defaultIcon}
+            />
+          ))}
+        </div>
       </div>
+
+      {/* Pagination */}
+        <div className="flex justify-center items-center mt-10 mb-20">
+              <Pagination
+                currentPage={currentPage}
+                totalPages={totalPages}
+                onPageChange={handlePageChange}
+              />
+        </div>
+
 
       {/* Section 2: Video Section */}
       <section
