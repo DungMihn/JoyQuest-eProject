@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # React + TypeScript + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
@@ -48,3 +49,10 @@ export default tseslint.config({
   },
 })
 ```
+=======
+# eProject (Dũng cài)
+  
+- Dũng: mọi người đánh lệnh yarn để cài lại hết nha
+
+- công nghệ đã cài: Tailwind, React Router, zustand, axios, React Icons
+>>>>>>> bd799c9854bf78e8796264aa782e43b8f288c038
