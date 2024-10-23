@@ -2,4 +2,33 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
+  input {
+    @apply border-[1px] border-[#363636] bg-[#f6f6f6] rounded-sm p-1;
+  }
+  button:disabled {
+    @apply border-[1px] border-[#363636] bg-[#8e8e8e] text-[#fff];
+  }
+}
+
+.swiper-pagination-bullet {
+  @apply w-4 h-4 bg-greenCustom;
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-25%);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce 5s infinite; /* Chỉnh 2s để làm chậm hiệu ứng */
+}
+
+.custom-itinerary-card {
+  width: 546px !important;
+  height: 365px !important;
 }

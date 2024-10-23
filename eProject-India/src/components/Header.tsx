@@ -71,7 +71,7 @@ const Header: React.FC = () => {
         } md:translate-x-0 z-[4000]`}
       >
         <Link
-          to="/home"
+          to="/"
           className={`text-[16px] md:text-[12px] lg:text-[16px] hover:text-orangeCustom ${
             isActive("/") ? "text-orangeCustom" : ""
           }`}
