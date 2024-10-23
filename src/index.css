@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  input {
+    border: 1px solid #b7b7b7;
+    margin: 10px;
+    padding-left: 5px;
+    border-radius: 5px;
+  }
+  h1 {
+    @apply text-4xl font-bold;
+  }
+  h2 {
+    @apply text-3xl font-bold;
+  }
+  h3 {
+    @apply text-2xl font-semibold;
+  }
+  section{
+    @apply py-[6.25rem];
+  }
+  *{
+    font-family: "Otomanopee One", sans-serif;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+  }
+  .font-Outfit {
+    font-family: 'Outfit', sans-serif;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply py-2 px-5 bg-blue-500 text-white font-semibold rounded-full shadow-md hover:bg-blue-700 focus:outline-none focus:ring focus:ring-gray-400 focus:ring-opacity-75;
+  }
+  .btn-danger {
+    @apply py-2 px-5 bg-red-500 text-white font-semibold rounded-full shadow-md hover:bg-red-700 focus:outline-none focus:ring focus:ring-gray-400 focus:ring-opacity-75;
+  }
+}
