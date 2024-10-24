@@ -6,7 +6,7 @@ import RecentlyViewed from '../components/D_RecentlyViewed';
 import D_SearchBlog from '../components/D_SearchBlog';
 import D_RecentlyViewedHandler from '../components/D_RecentlyViewedHandler'; // Wrapper
 
-const ITEMS_PER_PAGE = 4; // Điều chỉnh để hiển thị 4 mục trên mỗi trang
+const ITEMS_PER_PAGE = 4; // Adjust to display 4 items per page
 
 const D_BlogPage: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
@@ -37,14 +37,14 @@ const D_BlogPage: React.FC = () => {
                 blogs={blogs}
                 setSearchResults={(results) => {
                   setSearchResults(results);
-                  setCurrentPage(1); // Reset về trang đầu khi tìm kiếm
+                  setCurrentPage(1); // Reset to the first page after search
                 }}
               />
             </div>
       </div>
 
       <div className="min-h-screen flex items-center justify-center lg:pt-16 pb-16 mx-6 lg:mx-10">
-        {/* Blog Cards and Right Section */}
+        {/* All Section */}
         <div className="flex flex-col lg:flex-row gap-6 w-full">
           {/* Left Section - Blog Cards */}
           <div className="flex-1">
@@ -76,13 +76,13 @@ const D_BlogPage: React.FC = () => {
 
           {/* Right Section - Search and Recent Posts */}
           <div className="flex flex-col items-center lg:w-1/3 space-y-8">
-            {/* D_SearchBlog để tìm kiếm các bài viết */}
+            {/* D_SearchBlog for searching blog posts */}
             <div className="w-full mr-4 hidden lg:block">
               <D_SearchBlog
                 blogs={blogs}
                 setSearchResults={(results) => {
                   setSearchResults(results);
-                  setCurrentPage(1); // Reset về trang đầu khi tìm kiếm
+                  setCurrentPage(1); // Reset to the first page after search
                 }}
               />
             </div>
