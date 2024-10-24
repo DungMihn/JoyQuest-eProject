@@ -2,12 +2,57 @@
 @tailwind components;
 @tailwind utilities;
 @layer base {
-  input {
-    @apply border-[1px] border-[#363636] bg-[#f6f6f6] rounded-sm p-1;
+  /* 
+css mặc định cho các thẻ 
+ví: input, button, a, textarea, h1-h6
+*/
+  @layer base {
+    h2 {
+      @apply text-3xl;
+    }
+    input {
+      @apply border border-slate-400 rounded py-1 px-2;
+    }
   }
-  button:disabled {
-    @apply border-[1px] border-[#363636] bg-[#8e8e8e] text-[#fff];
+}
+/*
+Để tạo ra các class cho từng component
+*/
+@layer components {
+  .btn {
+    @apply text-slate-900 px-3 py-1 rounded bg-transparent border-0 cursor-pointer;
   }
+  .btn-default {
+    @apply text-gray-900 bg-gray-300;
+  }
+  .btn-primary {
+    @apply text-white bg-blue-700;
+  }
+
+  .btn-danger {
+    @apply text-white bg-red-600;
+  }
+}
+/*
+Các class tiện ích bổ sung, ghi đè lại một phần
+các class từ 2 lớp trên.
+*/
+@layer utilities {
+}
+
+/* Tạo cho D_ticker */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 15s linear infinite;
 }
 
 .swiper-pagination-bullet {

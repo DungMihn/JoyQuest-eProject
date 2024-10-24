@@ -66,13 +66,13 @@ const ItineraryDetails: React.FC = () => {
               if (index === 2) {
                 return (
                   <div
-                    className="col-span-2 md:col-span-3 overflow-hidden rounded-lg"
+                    className="col-span-1 md:col-span-2 overflow-hidden rounded-lg"
                     key={img.id}
                   >
                     <img
                       src={img.image}
                       alt={`${itinerary.title} ${img.id}`}
-                      className="w-full h-full object-cover transition-transform duration-700 transform hover:scale-110"
+                      className="w-full rounded-lg h-full object-cover transition-transform duration-700 transform hover:scale-110"
                     />
                   </div>
                 );
