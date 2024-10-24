@@ -99,9 +99,9 @@ const D_ticker: React.FC = () => {
             <p className="text-white font-outfit">Time: {data.localtime}</p>
           </>
         ) : (
-          <p className="text-white font-outfit">Loading...</p>
+          <p className="text-white font-outfit">Loading Location...</p>
         )}
-        {error && <p className="text-white text-center font-outfit">{error}</p>}
+        {error && <p className="text-white text-center font-outfit hidden lg:block">{error}</p>}
         {error && (
           <button onClick={handleManualLocation} className="bg-white hover:bg-[#5b9a42] hover:text-white text-orange-500 p-1 rounded">
             Try Again for Location

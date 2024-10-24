@@ -30,7 +30,20 @@ const D_BlogPage: React.FC = () => {
         </div>
       </div>
 
-      <div className="min-h-screen flex items-center justify-center py-16 mx-6 lg:mx-10">
+      {/* Search bar is only visible on mobile and tablet */}  
+        <div className="flex justify-center mx-3">
+            <div className="w-full mr-4 lg:hidden pt-16 pb-8">
+              <D_SearchBlog
+                blogs={blogs}
+                setSearchResults={(results) => {
+                  setSearchResults(results);
+                  setCurrentPage(1); // Reset về trang đầu khi tìm kiếm
+                }}
+              />
+            </div>
+      </div>
+
+      <div className="min-h-screen flex items-center justify-center lg:pt-16 pb-16 mx-6 lg:mx-10">
         {/* Blog Cards and Right Section */}
         <div className="flex flex-col lg:flex-row gap-6 w-full">
           {/* Left Section - Blog Cards */}
@@ -64,13 +77,15 @@ const D_BlogPage: React.FC = () => {
           {/* Right Section - Search and Recent Posts */}
           <div className="flex flex-col items-center lg:w-1/3 space-y-8">
             {/* D_SearchBlog để tìm kiếm các bài viết */}
-            <D_SearchBlog
-              blogs={blogs}
-              setSearchResults={(results) => {
-                setSearchResults(results);
-                setCurrentPage(1); // Reset về trang đầu khi tìm kiếm
-              }}
-            />
+            <div className="w-full mr-4 hidden lg:block">
+              <D_SearchBlog
+                blogs={blogs}
+                setSearchResults={(results) => {
+                  setSearchResults(results);
+                  setCurrentPage(1); // Reset về trang đầu khi tìm kiếm
+                }}
+              />
+            </div>
             <RecentlyViewed />
           </div>
         </div>
