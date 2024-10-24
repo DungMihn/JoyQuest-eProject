@@ -43,7 +43,7 @@ const D_BlogPage: React.FC = () => {
             </div>
       </div>
 
-      <div className="min-h-screen flex items-center justify-center lg:pt-16 pb-16 mx-6 lg:mx-10">
+      <div className="min-h-screen flex items-center justify-center lg:pt-16 pb-16 mx-6 lg:mx-20">
         {/* All Section */}
         <div className="flex flex-col lg:flex-row gap-6 w-full">
           {/* Left Section - Blog Cards */}
