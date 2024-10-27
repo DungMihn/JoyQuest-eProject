@@ -14,7 +14,7 @@ interface ItineraryCardProps {
   price: string;
   imageUrl: string;
   onButtonClick?: () => void;
-  isFocus: boolean;
+  isFocus?: boolean;
   id: number;
 }
 
@@ -50,7 +50,7 @@ export const ItineraryCard: React.FC<ItineraryCardProps> = ({
       {isFocus && (
         <div className="absolute bottom-[-50px] left-5 right-5 bg-white px-2 md:px-6 py-2 md:py-5 shadow-lg flex flex-col md:flex-row justify-between rounded-lg">
           <div>
-            <h2 className="text-[11px] text-center md:text-left md:text-lg">
+            <h2 className="text-[11px] text-center md:text-left md:text-[18px] lg:text-lg">
               {title}
             </h2>
 
@@ -62,7 +62,7 @@ export const ItineraryCard: React.FC<ItineraryCardProps> = ({
             </div>
           </div>
 
-          <div className="flex justify-between items-center md:gap-3 mt-2 md:mt-4 md:mt-0">
+          <div className="flex justify-between items-center md:gap-3 mt-2 md:mt-4">
             <CustomButton text="Details" onClick={handleButtonClick} />
             <div className="flex flex-col text-xs md:text-base">
               <span className="text-[9px] md:text-[24px]">{price}</span>

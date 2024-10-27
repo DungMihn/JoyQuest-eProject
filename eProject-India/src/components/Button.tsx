@@ -16,7 +16,7 @@ export const CustomButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className="flex items-center justify-center bg-[#f2682a] text-[#fff] p-[5px] font-medium md:p-3 lg:py-[15px] lg:px-[40px] rounded-full transition-transform hover:-translate-y-1 duration-300 hover:bg-greenCustom hover:text-white  border-none text-[8px] md:text-[13px] lg:text-[15px]"
+      className="flex items-center justify-center bg-[#f2682a] text-[#fff] p-[5px] font-medium md:p-3 lg:py-[15px] lg:px-[40px] rounded-full transition-transform hover:-translate-y-1 duration-300 hover:bg-greenCustom hover:text-white  border-none text-[10px] md:text-[13px] lg:text-[15px]"
       onClick={onClick}
     >
       <div className="flex gap-3">

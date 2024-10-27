@@ -43,13 +43,13 @@ const RecentlyViewed: React.FC = () => {
           alt={post.title}
           className="w-[60px] h-[60px] rounded-md object-cover"
         />
-        <p className="text-sm font-semibold">{post.title}</p>
+        <p className="text-sm">{post.title}</p>
       </div>
     ));
 
   return (
     <div className="w-full h-[350px] bg-white p-4 rounded-md shadow-lg">
-      <h2 className="text-xl font-bold my-4">Recently Viewed</h2>
+      <h2 className="text-xl my-4">Recently Viewed</h2>
       <hr className="py-4 " />
       {renderRecentlyViewed()}
     </div>

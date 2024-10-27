@@ -1,97 +1,68 @@
 import { Pagination } from "swiper/modules";
-
 import { Swiper, SwiperSlide } from "swiper/react";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-import "swiper/css/scrollbar";
 
 import { GiHiking } from "react-icons/gi";
 import { BlogCard } from "./BlogCard";
+import { blogs } from "../../data/blogs";
 
 const Blogs = () => {
   return (
     <div className="py-[120px] bg-[#F3F5F4]">
+      {/* Subtitle and Title */}
       <div className="section-subtitle flex justify-center items-center mb-2">
         <div className="icon text-[24px] p-3 text-white bg-[#F2682A] rounded-full mr-2">
           <GiHiking />
         </div>
-        <span className=" font-outfit text-[16px]">LASTEST NEWS</span>
+        <span className="font-outfit text-[14px] lg:text-[16px]">
+          LATEST NEWS
+        </span>
       </div>
-      <div className="font-medium text-[36px] flex justify-center">
+      <div className="font-medium text-[24px] lg:text-[36px] flex justify-center">
         Our Blog
       </div>
+
+      {/* Swiper Component */}
       <Swiper
-        // install Swiper modules
-        // install Swiper modules
-        className="w-[1325px]"
+        className="md:w-[80%] w-[60%] "
         modules={[Pagination]}
-        spaceBetween={50}
-        slidesPerView={1}
+        spaceBetween={20}
         pagination={{ clickable: true }}
         speed={800}
         onSwiper={(swiper) => console.log(swiper)}
         onSlideChange={() => console.log("slide change")}
+        breakpoints={{
+          // When window width is >= 640px (mobile)
+          640: {
+            slidesPerView: 1,
+            slidesPerGroup: 1,
+          },
+          // When window width is >= 768px (tablet)
+          768: {
+            slidesPerView: 2,
+            slidesPerGroup: 2,
+          },
+          // When window width is >= 1024px (desktop)
+          1024: {
+            slidesPerView: 3,
+            slidesPerGroup: 3,
+          },
+        }}
       >
-        <SwiperSlide className="flex justify-center flex-wrap mb-6">
-          <div className="flex p-7">
-          <BlogCard
-            date=" 29 Dec 2024"
-            title="How to Build a Campfire in 5 Easy Steps"
-            imageUrl="https://duruthemes.com/demo/html/bycamp/img/blog/01.jpg"
-            description="Lorem ipsum dolor saten amet consecten adipiscing elit lobortis fermen."
-          />
-          </div>
-
-          <div className="flex p-7">
-          <BlogCard
-            date=" 29 Dec 2024"
-            title="How to Build a Campfire in 5 Easy Steps"
-            imageUrl="https://duruthemes.com/demo/html/bycamp/img/blog/02.jpg"
-            description="Lorem ipsum dolor saten amet consecten adipiscing elit lobortis fermen."
-          />
-          </div>
-
-          <div className="flex p-7">
-          <BlogCard
-            date=" 29 Dec 2024"
-            title="How to Build a Campfire in 5 Easy Steps"
-            imageUrl="https://duruthemes.com/demo/html/bycamp/img/blog/03.jpg"
-            description="Lorem ipsum dolor saten amet consecten adipiscing elit lobortis fermen."
-          />
-          </div>
-        </SwiperSlide>
-
-        <SwiperSlide className="flex justify-center flex-wrap mb-6">
-        <div className="flex p-7">
-          <BlogCard
-            date=" 29 Dec 2024"
-            title="How to Build a Campfire in 5 Easy Steps"
-            imageUrl="https://duruthemes.com/demo/html/bycamp/img/blog/04.jpg"
-            description="Lorem ipsum dolor saten amet consecten adipiscing elit lobortis fermen."
-          />
-          </div>
-
-          <div className="flex p-7">
-          <BlogCard
-            date=" 29 Dec 2024"
-            title="How to Build a Campfire in 5 Easy Steps"
-            imageUrl="https://duruthemes.com/demo/html/bycamp/img/blog/05.jpg"
-            description="Lorem ipsum dolor saten amet consecten adipiscing elit lobortis fermen."
-          />
-          </div>
-
-          <div className="flex p-7">
-          <BlogCard
-            date=" 29 Dec 2024"
-            title="How to Build a Campfire in 5 Easy Steps"
-            imageUrl="https://duruthemes.com/demo/html/bycamp/img/blog/06.jpg"
-            description="Lorem ipsum dolor saten amet consecten adipiscing elit lobortis fermen."
-          />
-          </div>
-        </SwiperSlide>
+        {blogs.map((blog, index) => (
+          <SwiperSlide key={index} className="flex justify-center my-14">
+            <BlogCard
+              id={blog.id}
+              title={blog.title}
+              description={blog.description}
+              imageUrl={blog.imageUrl}
+              date={blog.date}
+            />
+          </SwiperSlide>
+        ))}
       </Swiper>
     </div>
   );

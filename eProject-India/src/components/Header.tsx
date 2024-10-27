@@ -39,7 +39,12 @@ const Header: React.FC = () => {
     };
   }, []);
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return location.pathname === "/";
+    }
+    return location.pathname.includes(path);
+  };
 
   const toggleMobileMenu = () => setIsMobileMenuOpen((prev) => !prev);
 
@@ -50,12 +55,12 @@ const Header: React.FC = () => {
       }`}
     >
       {/* Logo Section */}
-      <div className="flex items-center">
+      <Link to={"/"} className="flex items-center">
         <ButtonLogo />
         <span className="text-xl font-bold ml-2 lg:block md:hidden">
           <span className="text-greenCustom">Joy</span>Quest
         </span>
-      </div>
+      </Link>
 
       {/* Mobile Menu Toggle */}
       <div className="md:hidden z-[5000]">
