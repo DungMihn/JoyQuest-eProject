@@ -1,4 +1,3 @@
-import React from "react";
 import { RiStarFill } from "react-icons/ri";
 import { Parallax } from "react-parallax";
 import { Autoplay } from "swiper/modules";
@@ -6,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Testimonials = () => {
   return (
-    <div>
+    <>
       <Parallax
         className="h-[500px] object-cover "
         bgImage="https://duruthemes.com/demo/html/bycamp/img/slider/07.jpg"
@@ -145,7 +144,7 @@ const Testimonials = () => {
           </Swiper>
         </div>
       </Parallax>
-    </div>
+    </>
   );
 };
 
