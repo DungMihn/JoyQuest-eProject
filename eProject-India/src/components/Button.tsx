@@ -16,7 +16,7 @@ export const CustomButton: React.FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className="flex items-center justify-center bg-[#f2682a] text-[#fff] p-[5px] font-medium md:py-[15px] md:px-[40px] rounded-full transition-transform hover:-translate-y-1 duration-300 hover:bg-greenCustom hover:text-white  border-none text-[10px] md:text-[15px]"
+      className="flex items-center justify-center bg-[#f2682a] text-[#fff] p-[5px] font-medium md:p-3 lg:py-[15px] lg:px-[40px] rounded-full transition-transform hover:-translate-y-1 duration-300 hover:bg-greenCustom hover:text-white  border-none text-[10px] md:text-[13px] lg:text-[15px]"
       onClick={onClick}
     >
       <div className="flex gap-3">
@@ -30,7 +30,7 @@ export const CustomButton: React.FC<ButtonProps> = ({
 export const CustomButton2: React.FC<ButtonProps> = ({ text, onClick }) => {
   return (
     <button
-      className="flex items-center justify-center bg-greenCustom text-[#fff] font-medium py-[15px] px-[40px] rounded-full transition-transform duration-300 hover:bg-[#f2682a] hover:text-white hover:-translate-y-1 border-none text-[15px]"
+      className="flex items-center justify-center bg-greenCustom text-[#fff] px-4 py-2 font-medium md:py-[15px] md:px-[40px] rounded-full transition-transform duration-300 hover:bg-[#f2682a] hover:text-white hover:-translate-y-1 border-none text-[12px] md:text-[15px]"
       onClick={onClick}
     >
       {text}

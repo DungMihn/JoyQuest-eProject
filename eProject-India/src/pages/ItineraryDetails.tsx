@@ -1,6 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { itineraries } from "../../data/itineraries"; // Adjust the path as needed
+import { Parallax } from "react-parallax";
 
 const ItineraryDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -14,26 +15,21 @@ const ItineraryDetails: React.FC = () => {
   }
 
   return (
-    <div>
+    <div className="">
       {/* Thumbnail Section */}
-      <div
-        className="h-[382px] relative"
-        style={{
-          backgroundImage: `url(https://duruthemes.com/demo/html/bycamp/img/slider/08.jpg)`, // You might want to replace this with itinerary.imageUrl
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-        }}
+
+      <Parallax
+        className="h-[500px]"
+        bgImage="https://duruthemes.com/demo/html/bycamp/img/slider/08.jpg"
+        strength={500}
       >
-        <div className="absolute w-full h-full flex justify-center items-center px-4">
-          <span className="text-[30px] md:text-[45px] z-20 text-[#fff] text-center">
-            {itinerary.title}
-          </span>
+        <div className="flex h-[500px] justify-center text-center text-white py-[200px] bg-black bg-opacity-30 ">
+          <h1 className="text-4xl font-bold">{itinerary.title}</h1>
         </div>
-        <div className="absolute inset-0 bg-black opacity-30"></div>
-      </div>
+      </Parallax>
 
       {/* Content Section */}
-      <div className="mt-6 container mx-auto px-4 md:px-[10%] p-6 text-[18px]">
+      <div className="mt-6 container px-[10%] p-6 text-[18px]">
         <div>
           <h2 className="text-2xl mb-5">About {itinerary.title}</h2>
           <p className="font-outfit mb-5">{itinerary.content}</p>
@@ -44,7 +40,7 @@ const ItineraryDetails: React.FC = () => {
           <h2 className="text-2xl mb-3">Suggested Activities</h2>
           <ul className="list-disc pl-5">
             {itinerary.suggestedActivities.map((activity, index) => (
-              <li className="font-outfit" key={index}>
+              <li className=" font-outfit" key={index}>
                 {activity}
               </li>
             ))}
@@ -70,18 +66,17 @@ const ItineraryDetails: React.FC = () => {
               if (index === 2) {
                 return (
                   <div
-                    className="col-span-2 md:col-span-3 overflow-hidden rounded-lg"
+                    className="col-span-1 md:col-span-2 overflow-hidden rounded-lg"
                     key={img.id}
                   >
                     <img
                       src={img.image}
                       alt={`${itinerary.title} ${img.id}`}
-                      className="w-full h-full object-cover transition-transform duration-700 transform hover:scale-110"
+                      className="w-full rounded-lg h-full object-cover transition-transform duration-700 transform hover:scale-110"
                     />
                   </div>
                 );
               }
-              return null;
             })}
           </div>
         </div>

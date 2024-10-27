@@ -13,21 +13,21 @@ export const gameCategories = [
   },
   {
     id: 3,
-    name: "Children's Games",
+    name: "Kids's Games",
     description: "Games suitable for children, ensuring safety and fun.",
-    slug: "childrens-games",
+    slug: "Kids-games",
   },
   {
     id: 4,
     name: "Men's Games",
     description: "Games that cater to men's interests and preferences.",
-    slug: "mens-games",
+    slug: "males-games",
   },
   {
     id: 5,
     name: "Women's Games",
     description: "Fun and engaging games for women.",
-    slug: "womens-games",
+    slug: "females-games",
   },
   {
     id: 6,

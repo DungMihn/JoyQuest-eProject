@@ -98,4 +98,92 @@ export const blogs: Blog[] = [
       },
     ],
   },
+  {
+    id: 5,
+    title: "Exploring the Ancient Temples of Angkor Wat",
+    writer_image: "https://duruthemes.com/demo/html/bycamp/img/team/4.jpg",
+    writer_name: "Jane Smith",
+    date: "2024-10-05",
+    content:
+      "Angkor Wat is one of the most iconic and stunning archaeological sites in the world. This blog will guide you through the history, architecture, and spiritual significance of the temple complex. Discover the best times to visit, tips for exploring the site, and nearby attractions that enhance your journey. Whether you're an avid history buff or simply looking for breathtaking views, Angkor Wat has something for everyone.",
+    description:
+      "A guide to the majestic Angkor Wat, the largest religious monument in the world.",
+    imageUrl: "https://duruthemes.com/demo/html/bycamp/img/blog/02.jpg",
+    images: [
+      {
+        id: 1,
+        image: "https://duruthemes.com/demo/html/bycamp/img/slider/08.jpg",
+      },
+      {
+        id: 2,
+        image: "https://duruthemes.com/demo/html/bycamp/img/slider/09.jpg",
+      },
+    ],
+  },
+  {
+    id: 6,
+    title: "Top 10 Breathtaking Hiking Trails Around the World",
+    writer_image: "https://duruthemes.com/demo/html/bycamp/img/team/5.jpg",
+    writer_name: "Michael Brown",
+    date: "2024-10-10",
+    content:
+      "For the adventure seeker, hiking is one of the most rewarding activities. This blog highlights ten of the most breathtaking hiking trails around the globe, each offering unique landscapes and experiences. From the rugged terrains of Patagonia to the serene paths of the Swiss Alps, discover where to find these trails and what to expect during your hike. This guide is perfect for those looking to challenge themselves and explore nature's beauty.",
+    description:
+      "A comprehensive list of the top hiking trails for outdoor enthusiasts.",
+    imageUrl: "https://duruthemes.com/demo/html/bycamp/img/blog/03.jpg",
+    images: [
+      {
+        id: 1,
+        image: "https://duruthemes.com/demo/html/bycamp/img/slider/10.jpg",
+      },
+      {
+        id: 2,
+        image: "https://duruthemes.com/demo/html/bycamp/img/slider/11.jpg",
+      },
+    ],
+  },
+  {
+    id: 7,
+    title: "The Best Tips for Backpacking Through Europe",
+    writer_image: "https://duruthemes.com/demo/html/bycamp/img/team/6.jpg",
+    writer_name: "Emily Johnson",
+    date: "2024-10-15",
+    content:
+      "Backpacking through Europe can be one of the most rewarding travel experiences. This blog offers tips on planning your itinerary, budgeting, and choosing accommodations that fit your travel style. We'll cover essential items to pack, safety tips, and how to meet fellow travelers along the way. Whether you’re a first-timer or a seasoned backpacker, this guide will help you navigate your journey through the beautiful landscapes and cultures of Europe.",
+    description:
+      "Essential tips for an unforgettable backpacking adventure across Europe.",
+    imageUrl: "https://duruthemes.com/demo/html/bycamp/img/blog/04.jpg",
+    images: [
+      {
+        id: 1,
+        image: "https://duruthemes.com/demo/html/bycamp/img/slider/12.jpg",
+      },
+      {
+        id: 2,
+        image: "https://duruthemes.com/demo/html/bycamp/img/slider/13.jpg",
+      },
+    ],
+  },
+  {
+    id: 8,
+    title: "A Culinary Journey Through Vietnam",
+    writer_image: "https://duruthemes.com/demo/html/bycamp/img/team/7.jpg",
+    writer_name: "Sophia Lee",
+    date: "2024-10-20",
+    content:
+      "Vietnam is renowned for its rich culinary heritage. This blog takes you on a journey through the must-try dishes and the best places to find authentic Vietnamese cuisine. From street food stalls to high-end restaurants, discover the flavors and ingredients that make Vietnamese food unique. We'll also share recipes and cooking tips to bring the taste of Vietnam into your own kitchen.",
+    description:
+      "Explore the vibrant flavors of Vietnamese cuisine with our comprehensive guide.",
+    imageUrl: "https://duruthemes.com/demo/html/bycamp/img/blog/05.jpg",
+    images: [
+      {
+        id: 1,
+        image: "https://duruthemes.com/demo/html/bycamp/img/slider/14.jpg",
+      },
+      {
+        id: 2,
+        image: "https://duruthemes.com/demo/html/bycamp/img/slider/15.jpg",
+      },
+    ],
+  },
 ];
