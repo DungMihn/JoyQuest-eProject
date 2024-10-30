@@ -2,6 +2,7 @@ import { RoundIconButton } from "./Button";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import Subtract from "/icons/HD_icon/Subtract.svg";
+import React from "react";
 
 interface CardProps {
   id: number;

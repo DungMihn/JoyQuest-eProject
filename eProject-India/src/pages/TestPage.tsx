@@ -10,6 +10,7 @@ import { blogs } from "../../data/blogs";
 import { ItineraryCard } from "../components/ItineraryCard";
 import { itineraries } from "../../data/itineraries";
 import { FiYoutube } from "react-icons/fi";
+import React from "react";
 
 const TestPage = () => {
   return (

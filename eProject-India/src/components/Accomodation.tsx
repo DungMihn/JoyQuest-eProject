@@ -1,3 +1,4 @@
+import React from "react";
 import { FaCampground } from "react-icons/fa";
 import { GiHiking } from "react-icons/gi";
 import { MdOutlineCottage } from "react-icons/md";
@@ -11,9 +12,13 @@ const Accomodation = () => {
         <div className="icon text-[20px] md:text-[24px] p-2 md:p-3 text-white bg-[#F2682A] rounded-full mr-2">
           <GiHiking />
         </div>
-        <span className="font-light text-[14px] md:text-[16px]">What We Offer</span>
+        <span className="font-light text-[14px] md:text-[16px]">
+          What We Offer
+        </span>
       </div>
-      <div className="font-medium text-[28px] md:text-[36px]">Where To Stay</div>
+      <div className="font-medium text-[28px] md:text-[36px]">
+        Where To Stay
+      </div>
 
       {/* Container cho các thẻ */}
       <div className="flex flex-col md:flex-row space-y-6 md:space-y-0 md:space-x-8 mt-6 px-4 lg:px-0">
@@ -23,9 +28,12 @@ const Accomodation = () => {
             <MdOutlineCottage className="text-greenCustom w-12 h-12 md:w-16 md:h-16" />
           </div>
           <div className="content">
-            <div className="title text-lg md:text-xl mb-3 md:mb-4">Private Cottages</div>
+            <div className="title text-lg md:text-xl mb-3 md:mb-4">
+              Private Cottages
+            </div>
             <p className="font-sans text-[14px] md:text-[16px]">
-              Lorem ipsum varius natosuen miss magnis sarturien monte nascete in the fermen.
+              Lorem ipsum varius natosuen miss magnis sarturien monte nascete in
+              the fermen.
             </p>
           </div>
         </div>
@@ -36,9 +44,12 @@ const Accomodation = () => {
             <FaCampground className="text-greenCustom w-12 h-12 md:w-16 md:h-16" />
           </div>
           <div className="content">
-            <div className="title text-lg md:text-xl mb-3 md:mb-4">Tents With Territory</div>
+            <div className="title text-lg md:text-xl mb-3 md:mb-4">
+              Tents With Territory
+            </div>
             <p className="font-sans text-[14px] md:text-[16px]">
-              Lorem ipsum varius natosuen miss magnis sarturien monte nascete in the fermen.
+              Lorem ipsum varius natosuen miss magnis sarturien monte nascete in
+              the fermen.
             </p>
           </div>
         </div>
@@ -49,9 +60,12 @@ const Accomodation = () => {
             <TbBus className="text-greenCustom w-12 h-12 md:w-16 md:h-16" />
           </div>
           <div className="content">
-            <div className="title text-lg md:text-xl mb-3 md:mb-4">Compact Trailers</div>
+            <div className="title text-lg md:text-xl mb-3 md:mb-4">
+              Compact Trailers
+            </div>
             <p className="font-sans text-[14px] md:text-[16px]">
-              Lorem ipsum varius natosuen miss magnis sarturien monte nascete in the fermen.
+              Lorem ipsum varius natosuen miss magnis sarturien monte nascete in
+              the fermen.
             </p>
           </div>
         </div>

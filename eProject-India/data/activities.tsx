@@ -1,3 +1,4 @@
+import React from "react";
 import { RiGameFill } from "react-icons/ri";
 
 export const activities = [

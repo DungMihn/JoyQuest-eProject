@@ -1,6 +1,7 @@
 import { Parallax } from "react-parallax";
 import Itinerary from "../components/Itinerary";
 import PromoVideo from "../components/PromoVideo";
+import React from "react";
 
 const ItineraryPage = () => {
   return (

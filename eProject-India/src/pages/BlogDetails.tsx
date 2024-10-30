@@ -4,6 +4,7 @@ import { IoIosCalendar } from "react-icons/io";
 import { MdOutlineSpeakerNotes } from "react-icons/md";
 import { IoMdPaperPlane } from "react-icons/io";
 import { CustomButton } from "../components/Button";
+import React from "react";
 
 function BlogDetails() {
   const { id } = useParams<{ id: string }>();

@@ -18,6 +18,8 @@ import D_MalesPage from "./pages/D_MalesPage";
 import D_BlogPage from "./pages/D_BlogPage";
 import D_ScrollProgress from "./components/D_ScrollProgress";
 import D_FixedScrollIcons from "./components/D_FixedScrollIcons";
+import AboutPage from "./pages/AboutPage";
+import Faqs from "./pages/Faqs";
 
 const App = () => {
   return (
@@ -46,6 +48,8 @@ const App = () => {
           <Route path="/activities/males-games" element={<D_MalesPage />} />
           <Route path="/activities/outdoor-games" element={<D_OutdoorPage />} />
           <Route path="/blog" element={<D_BlogPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/faqs" element={<Faqs />} />
         </Route>
       </Routes>
     </div>

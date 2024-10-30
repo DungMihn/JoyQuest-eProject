@@ -9,6 +9,7 @@ import "swiper/css/scrollbar";
 import { ActivityCard } from "./ActivityCard";
 import { GiHiking } from "react-icons/gi";
 import { activities } from "../../data/activities";
+import React from "react";
 
 const Activity = () => {
   // Chia hoạt động thành các nhóm 3 phần tử

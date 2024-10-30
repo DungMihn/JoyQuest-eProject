@@ -1,3 +1,4 @@
+import React from "react";
 import { FaCampground, FaFire, FaHiking } from "react-icons/fa";
 import { GiHiking } from "react-icons/gi";
 

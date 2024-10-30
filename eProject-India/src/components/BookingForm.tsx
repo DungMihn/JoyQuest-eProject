@@ -4,6 +4,7 @@ import { CustomButton } from "./Button";
 import { BsCalendar2Check } from "react-icons/bs";
 import { IoInformationCircle } from "react-icons/io5";
 import { useForm, SubmitHandler } from "react-hook-form";
+import React from "react";
 
 interface BookingFormProps {
   isOpen: boolean;
