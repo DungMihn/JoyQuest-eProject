@@ -4,15 +4,18 @@ import { ActivityCard } from "../components/ActivityCard";
 import { activities } from "../../data/activities";
 import Pagination from "../components/D_Pagination";
 
+const IndoorsActivities = activities.filter((activity) =>
+  activity.categories.includes("Indoor Games")
+);
 const ITEMS_PER_PAGE = 6;
 
 const D_IndoorPage: React.FC = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
 
-  const totalPages = Math.ceil(activities.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(IndoorsActivities.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentItems = activities.slice(
+  const currentItems = IndoorsActivities.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
@@ -47,7 +50,7 @@ const D_IndoorPage: React.FC = () => {
             <ActivityCard
               id={activity.id}
               key={index}
-              title={"indoor-games"}
+              title={activity.title}
               description={activity.description}
               imageUrl={activity.imageUrl}
               defaultIcon={activity.defaultIcon}

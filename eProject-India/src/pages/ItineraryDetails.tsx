@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router-dom";
-import { itineraries } from "../../data/itineraries"; // Adjust the path as needed
-import { Parallax } from "react-parallax";
+import { useEffect } from "react";
+import { itineraries } from "../../data/itineraries";
 
 const ItineraryDetails: React.FC = () => {
   const { id } = useParams<{ id: string }>();
@@ -14,22 +14,34 @@ const ItineraryDetails: React.FC = () => {
     return <p>Itinerary not found.</p>;
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="">
       {/* Thumbnail Section */}
 
-      <Parallax
-        className="h-[500px]"
-        bgImage="https://duruthemes.com/demo/html/bycamp/img/slider/08.jpg"
-        strength={500}
+      <div
+        className="relative h-60 md:h-96 bg-fixed bg-center bg-cover flex items-center justify-center"
+        style={{
+          backgroundImage:
+            'url("https://duruthemes.com/demo/html/bycamp/img/slider/08.jpg")',
+        }}
       >
-        <div className="flex h-[500px] justify-center text-center text-white py-[200px] bg-black bg-opacity-30 ">
+        <div className="flex w-full h-full justify-center items-center text-center text-white bg-black bg-opacity-30 ">
           <h1 className="text-4xl font-bold">{itinerary.title}</h1>
         </div>
-      </Parallax>
+      </div>
 
       {/* Content Section */}
       <div className="mt-6 container px-[10%] p-6 text-[18px]">
+        <div className="mb-5">
+          <span className="text-2xl">Location:</span>
+          <span className="font-outfit text-xl ml-2 mb-5">
+            {itinerary.location}
+          </span>
+        </div>
         <div>
           <h2 className="text-2xl mb-5">About {itinerary.title}</h2>
           <p className="font-outfit mb-5">{itinerary.content}</p>

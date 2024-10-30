@@ -4,6 +4,7 @@ import { IoIosCalendar } from "react-icons/io";
 import { MdOutlineSpeakerNotes } from "react-icons/md";
 import { IoMdPaperPlane } from "react-icons/io";
 import { CustomButton } from "../components/Button";
+import { useEffect } from "react";
 
 function BlogDetails() {
   const { id } = useParams<{ id: string }>();
@@ -14,10 +15,14 @@ function BlogDetails() {
     return <div>Blog not found.</div>;
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div>
       <div
-        className="h-[382px] relative"
+        className="relative  h-60 md:h-96 bg-fixed bg-center bg-cover flex"
         style={{
           backgroundImage: `url(${blog.imageUrl})`,
           backgroundSize: "cover",

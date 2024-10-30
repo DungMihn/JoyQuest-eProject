@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { activities } from "../../data/activities";
 
@@ -23,10 +23,13 @@ const ActivityDetails: React.FC = () => {
     return <p>Activity not found.</p>;
   }
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="text-[18px]">
       <div
-        className="h-[382px] relative"
+        className="relative  h-60 md:h-96 bg-fixed bg-center bg-cover flex"
         style={{
           backgroundImage: `url(${activity.imageUrl})`,
           backgroundSize: "cover",
@@ -40,7 +43,7 @@ const ActivityDetails: React.FC = () => {
         </div>
         <div className="absolute inset-0 bg-black opacity-30"></div>
       </div>
-      <div className="container my-[5%] px-4 md:px-[10%]">
+      <div className="container py-[5%] px-4 md:px-[10%]">
         <h1 className="text-2xl mb-5">About {activity.title}</h1>
         <p className="text-[#17px] mb-10 font-outfit">{activity.description}</p>
 

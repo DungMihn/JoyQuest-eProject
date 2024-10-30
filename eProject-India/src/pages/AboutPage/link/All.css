@@ -1,0 +1,44 @@
+.H-title {
+  background-image: url("../../../assets/img/08.jpg");
+  width: 100%;
+  height: 300px;
+  margin-bottom: 20px;
+  object-fit: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+}
+.arrow:hover div {
+  transform: rotate(0);
+  background-color: orange;
+  transition: all 500ms ease;
+  border-radius: 99999999px;
+  color: #fff;
+}
+.arrow:not(:hover) div {
+  transform: rotate(-45deg);
+  transition: all 500ms ease;
+  background-color: #fff;
+  border-radius: 99999999px;
+}
+.a {
+  width: 22rem;
+  border-radius: 4px;
+  transform: scale(1);
+  transition: transform 800ms ease;
+}
+.a:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}
+
+.b {
+  width: 46rem;
+  border-radius: 4px;
+  transform: scale(1);
+  transition: transform 800ms ease;
+}
+.b:hover {
+  transform: scale(1.1);
+  cursor: pointer;
+}

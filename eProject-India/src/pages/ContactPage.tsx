@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import GoogleMap from "../components/GoogleMap";
 import ContactThumbnail from "../components/ContactThumbnail";
 import GetInTouch from "../components/GetInTouch";
 
 const ContactPage: React.FC = () => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className="pb-10">
       <ContactThumbnail />

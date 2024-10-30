@@ -4,6 +4,9 @@ import { ActivityCard } from "../components/ActivityCard";
 import Pagination from "../components/D_Pagination";
 import { activities } from "../../data/activities";
 
+const MaleActivities = activities.filter((activity) =>
+  activity.categories.includes("Men Games")
+);
 const ITEMS_PER_PAGE = 6;
 
 const D_MalesPage: React.FC = () => {
@@ -17,9 +20,9 @@ const D_MalesPage: React.FC = () => {
     /* Pagination Logic*/
   }
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(activities.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(MaleActivities.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentItems = activities.slice(
+  const currentItems = MaleActivities.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
@@ -58,7 +61,7 @@ const D_MalesPage: React.FC = () => {
             <ActivityCard
               id={activity.id}
               key={index}
-              title={"mens-games"}
+              title={activity.title}
               description={activity.description}
               imageUrl={activity.imageUrl}
               defaultIcon={activity.defaultIcon}

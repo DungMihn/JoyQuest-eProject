@@ -4,7 +4,7 @@ import { BlogCard } from "../components/BlogCard";
 import Pagination from "../components/D_Pagination";
 import RecentlyViewed from "../components/D_RecentlyViewed";
 import D_SearchBlog from "../components/D_SearchBlog";
-import D_RecentlyViewedHandler from "../components/D_RecentlyViewedHandler";
+import D_RecentlyViewedHandler from "../components/D_RecentlyViewedHandler"; // Wrapper
 
 const ITEMS_PER_PAGE = 4; // Adjust to display 4 items per page
 
