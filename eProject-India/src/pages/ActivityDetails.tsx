@@ -43,42 +43,60 @@ const ActivityDetails: React.FC = () => {
         </div>
         <div className="absolute inset-0 bg-black opacity-30"></div>
       </div>
-      <div className="container py-[5%] px-4 md:px-[10%]">
-        <h1 className="text-2xl mb-5">About {activity.title}</h1>
-        <p className="text-[#17px] mb-10 font-outfit">{activity.description}</p>
+      <div className="container py-[8%] px-6 md:px-[12%]">
+        <h1 className="text-3xl mb-8 tracking-wider text-center  drop-shadow-lg">
+          About {activity.title}
+        </h1>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          <div>
-            <h2 className="text-2xl mb-5">Materials</h2>
-            <ul className="list-disc pl-5">
+        <p className="text-lg mb-12 font-outfit">{activity.description}</p>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 bg-white bg-opacity-20 backdrop-blur-md rounded-lg p-6">
+          {/* Materials Section */}
+          <div className="">
+            <h2 className="text-2xl mb-5  drop-shadow-md">Materials</h2>
+            <ul className="list-disc pl-5 space-y-2">
               {activity.materials.map((material, index) => (
-                <li className="font-outfit" key={index}>
+                <li className="font-outfit /90" key={index}>
                   {material}
                 </li>
               ))}
             </ul>
           </div>
+
+          {/* Details Section */}
           <div>
-            <h2 className="text-2xl mb-5">Details</h2>
-            <p className="font-outfit">
-              <span>Time Required:</span> {activity.timeRequired}
+            <h2 className="text-2xl mb-5  drop-shadow-md">Details</h2>
+            <p className="font-outfit /80 mb-3">
+              <span className="">Time Required:</span> {activity.timeRequired}
             </p>
-            <p className="font-outfit">
-              <span>Categories:</span> {activity.categories.join(", ")}
+            <p className="font-outfit /80">
+              <span className="">Categories:</span>{" "}
+              {activity.categories.join(", ")}
             </p>
           </div>
         </div>
 
-        <div className="mt-10">
-          <h2 className="text-2xl mb-3">Instructions</h2>
-          <p className="font-outfit">{activity.instructions}</p>
+        {/* Instructions Section */}
+        <div className="mt-12">
+          <h2 className="text-2xl mb-5  drop-shadow-md text-center">
+            Instructions
+          </h2>
+          <p className="font-outfit text-lg leading-relaxed /80">
+            {activity.instructions}
+          </p>
         </div>
 
-        <div className="mt-10">
-          <h2 className="text-2xl mb-5">Additional Images</h2>
+        {/* Additional Images Section */}
+        <div className="mt-12">
+          <h2 className="text-2xl mb-5  drop-shadow-md text-center">
+            Additional Images
+          </h2>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             {activity.images.map((img) => (
-              <div className="overflow-hidden rounded-lg" key={img.id}>
+              <div
+                className="overflow-hidden rounded-lg shadow-lg transform transition-all duration-500 hover:scale-105 hover:shadow-xl"
+                key={img.id}
+              >
                 <img
                   src={img.image}
                   alt={`${activity.title} ${img.id}`}

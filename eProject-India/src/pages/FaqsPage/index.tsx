@@ -20,7 +20,7 @@ const Faqs = () => {
         </div>
       </section>
       <section className="p-5">
-        <div className="container mx-auto flex">
+        <div className="container mx-auto flex justify-center">
           <div className="flex flex-col md:flex-row justify-center gap-5">
             <div className="lg:w-[30rem] md:w-4/5 flex flex-col gap-4">
               <ToogleContent title="Are meals provided at the camp?" />

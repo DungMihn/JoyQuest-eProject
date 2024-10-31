@@ -58,7 +58,7 @@ const ItineraryPage = () => {
             onClick={() => setIsOpen(!isOpen)}
             className="px-10 py-2 border border-gray-300 rounded-md shadow-md cursor-pointer bg-white text-gray-700 font-medium flex items-center justify-between gap-3"
           >
-            <span>{selectedLocation}</span>
+            <span className="font-outfit">{selectedLocation}</span>
             <IoIosArrowDown
               className={`transform transition-transform ${
                 isOpen ? "rotate-180" : "rotate-0"
@@ -71,7 +71,7 @@ const ItineraryPage = () => {
                 <div
                   key={location}
                   onClick={() => handleLocationSelect(location)}
-                  className="px-4 py-2 hover:text-orangeCustom cursor-pointer text-gray-700"
+                  className="font-outfit px-4 py-2 hover:text-orangeCustom cursor-pointer text-gray-700"
                 >
                   {location}
                 </div>
