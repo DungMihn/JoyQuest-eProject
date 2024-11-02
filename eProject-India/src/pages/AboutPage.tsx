@@ -4,6 +4,7 @@ import Testimonials from "../components/Testiominals";
 import Activity from "../components/Activity";
 import PromoVideo from "../components/PromoVideo";
 import OurTeam from "../components/OurTeam";
+import React from "react";
 
 const AboutPage = () => {
   return (
@@ -17,7 +18,9 @@ const AboutPage = () => {
         }}
       >
         <div className="bg-black bg-opacity-30 w-full h-full flex justify-center items-center">
-          <h3 className="text-5xl text-white">Camping Blog</h3>
+          <h3 className="text-5xl text-white">
+            About <span className="text-greenCustom">Us</span>
+          </h3>
         </div>
       </div>
       <About />
