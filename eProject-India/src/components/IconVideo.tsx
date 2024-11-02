@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FaPlay } from "react-icons/fa"; // Import icon từ react-icons
 import ReactDOM from "react-dom";
 
@@ -17,10 +17,10 @@ const VideoPlayer = () => {
     <div className="relative">
       {/* Icon Video */}
       <div
-        className="w-[90px] h-[90px] text-center text-white cursor-pointer p-3 border-solid border-2 border-greenCustom rounded-full flex items-center justify-center"
+        className="w-[90px] h-[90px] text-center text-white cursor-pointer p-3 border-solid border-2 hover:border-white border-greenCustom rounded-full flex items-center justify-center"
         onClick={openModal}
       >
-        <FaPlay />
+        <FaPlay className="text-[#fff]" />
       </div>
 
       {/* Modal hiển thị video khi click */}

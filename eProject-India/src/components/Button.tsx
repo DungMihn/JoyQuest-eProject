@@ -45,6 +45,7 @@ export const CustomButton3: React.FC<ButtonProps> = ({ text, onClick }) => {
       onClick={onClick}
     >
       {text}
+      <MdArrowOutward className="pl-3" size={30} />
     </button>
   );
 };

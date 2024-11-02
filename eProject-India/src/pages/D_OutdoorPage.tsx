@@ -1,9 +1,12 @@
 import React, { useState } from "react";
-import { FaCirclePlay } from "react-icons/fa6";
+import IconVideo from "../components/IconVideo";
 import { ActivityCard } from "../components/ActivityCard";
 import Pagination from "../components/D_Pagination";
 import { activities } from "../../data/activities";
 
+const OutdoorActivities = activities.filter((activity) =>
+  activity.categories.includes("Outdoor Games")
+);
 const ITEMS_PER_PAGE = 6;
 
 const D_OutdoorPage: React.FC = () => {
@@ -17,9 +20,9 @@ const D_OutdoorPage: React.FC = () => {
     /* Pagination Logic*/
   }
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(activities.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(OutdoorActivities.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentItems = activities.slice(
+  const currentItems = OutdoorActivities.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
@@ -51,7 +54,7 @@ const D_OutdoorPage: React.FC = () => {
             <ActivityCard
               id={activity.id}
               key={index}
-              title={"outdoor-games"}
+              title={activity.title}
               description={activity.description}
               imageUrl={activity.imageUrl}
               defaultIcon={activity.defaultIcon}
@@ -80,11 +83,8 @@ const D_OutdoorPage: React.FC = () => {
         <div className="bg-black bg-opacity-50 w-full h-full flex flex-col justify-center items-center">
           <h3 className="text-3xl text-white mb-4">Outdoor Promo Video</h3>
 
-          <button
-            className="bg-white p-2 rounded-full hover:bg-[#5b9a42]"
-            onClick={() => setIsVideoVisible(true)}
-          >
-            <FaCirclePlay size={90} />
+          <button className="" onClick={() => setIsVideoVisible(true)}>
+            <IconVideo />
           </button>
         </div>
       </section>

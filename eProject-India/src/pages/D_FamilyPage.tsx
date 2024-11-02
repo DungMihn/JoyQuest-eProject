@@ -1,31 +1,29 @@
 import React, { useState } from "react";
-import { FaCirclePlay } from "react-icons/fa6";
-import { ActivityCard } from "../components/ActivityCard";
+import { ActivityCard } from "../components/ActivityCard"; // Ensure proper path and default export if needed
 import Pagination from "../components/D_Pagination";
 import { activities } from "../../data/activities";
+import IconVideo from "../components/IconVideo";
 
+const familyActivities = activities.filter((activity) =>
+  activity.categories.includes("Family Games")
+);
 const ITEMS_PER_PAGE = 6;
 
 const D_FamilyPage: React.FC = () => {
   const [isVideoVisible, setIsVideoVisible] = useState(false);
-
-  const handleCloseVideo = () => {
-    setIsVideoVisible(false);
-  };
-
-  {
-    /* Pagination Logic*/
-  }
   const [currentPage, setCurrentPage] = useState(1);
-  const totalPages = Math.ceil(activities.length / ITEMS_PER_PAGE);
+
+  const handleCloseVideo = () => setIsVideoVisible(false);
+
+  // Pagination Logic
+  const totalPages = Math.ceil(familyActivities.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
-  const currentItems = activities.slice(
+  const currentItems = familyActivities.slice(
     startIndex,
     startIndex + ITEMS_PER_PAGE
   );
-  const handlePageChange = (page: number) => {
-    setCurrentPage(page);
-  };
+
+  const handlePageChange = (page: number) => setCurrentPage(page);
 
   return (
     <div>
@@ -45,11 +43,11 @@ const D_FamilyPage: React.FC = () => {
       {/* ProductCard Section */}
       <div className="mt-16 flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mx-6 lg:mx-10">
-          {currentItems.map((activity, index) => (
+          {currentItems.map((activity) => (
             <ActivityCard
+              key={activity.id}
               id={activity.id}
-              key={index}
-              title={"family-games"}
+              title={activity.title}
               description={activity.description}
               imageUrl={activity.imageUrl}
               defaultIcon={activity.defaultIcon}
@@ -77,12 +75,8 @@ const D_FamilyPage: React.FC = () => {
       >
         <div className="bg-black bg-opacity-50 w-full h-full flex flex-col justify-center items-center">
           <h3 className="text-3xl text-white mb-4">Family Promo Video</h3>
-
-          <button
-            className="bg-white p-2 rounded-full hover:bg-[#5b9a42]"
-            onClick={() => setIsVideoVisible(true)}
-          >
-            <FaCirclePlay size={90} />
+          <button className="" onClick={() => setIsVideoVisible(true)}>
+            <IconVideo />
           </button>
         </div>
       </section>
@@ -100,7 +94,7 @@ const D_FamilyPage: React.FC = () => {
             <iframe
               className="w-full h-96"
               src="https://www.youtube.com/embed/mtc2IHdyz4s?autoplay=1"
-              title="Indoor Promo Video"
+              title="Family Promo Video"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
             />

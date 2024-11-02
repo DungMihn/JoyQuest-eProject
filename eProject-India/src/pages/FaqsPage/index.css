@@ -1,0 +1,22 @@
+.H-img {
+  background-image: url("../../assets/img/H.jpg");
+}
+.active {
+  background-color: #f2682a;
+}
+.active .title {
+  color: white;
+}
+
+/* @media screen and (max-width: 768px) {
+    .flex {
+      display: flex;
+      flex-direction: column;
+    }
+    .col-5 {
+      width: 100%;
+    }
+    .H-res {
+      top: 0;
+    }
+  } */

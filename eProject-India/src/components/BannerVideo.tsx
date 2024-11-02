@@ -1,6 +1,5 @@
-import { CustomButton3 } from './Button'
-import { FaWhatsapp } from 'react-icons/fa'
-
+import { CustomButton3 } from "./Button";
+import { FaWhatsapp } from "react-icons/fa";
 const BannerVideo = () => {
   return (
     <div className="relative">

@@ -18,6 +18,10 @@ import D_MalesPage from "./pages/D_MalesPage";
 import D_BlogPage from "./pages/D_BlogPage";
 import D_ScrollProgress from "./components/D_ScrollProgress";
 import D_FixedScrollIcons from "./components/D_FixedScrollIcons";
+import D_VisitorCounter from "./components/D_VisitorCounter";
+import About from "./pages/AboutPage";
+import Faqs from "./pages/FaqsPage";
+import Error from "./pages/ErrorPage";
 
 const App = () => {
   return (
@@ -31,10 +35,15 @@ const App = () => {
       <div className="fixed bottom-36 right-4 flex flex-col space-y-3 z-50">
         <D_FixedScrollIcons />
       </div>
+      <div>
+        <D_VisitorCounter />
+        {/* Page content */}
+      </div>
       <Routes>
         <Route path="" element={<MainLayout />}>
           <Route path="/" element={<Home />} />
           <Route path="/contact" element={<ContactPage />} />
+          <Route path="/blog" element={<D_BlogPage />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
           <Route path="/activity/:id" element={<ActivityDetails />} />
           <Route path="/itinerary" element={<ItineraryPage />} />
@@ -45,8 +54,10 @@ const App = () => {
           <Route path="/activities/kids-games" element={<D_KidsPage />} />
           <Route path="/activities/males-games" element={<D_MalesPage />} />
           <Route path="/activities/outdoor-games" element={<D_OutdoorPage />} />
-          <Route path="/blog" element={<D_BlogPage />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/faqs" element={<Faqs />} />
         </Route>
+        <Route path="*" element={<Error />} />
       </Routes>
     </div>
   );
