@@ -1,6 +1,7 @@
 import { FaRegCalendarDays } from "react-icons/fa6";
 import { FC } from "react";
 import { useNavigate } from "react-router-dom";
+import React from "react";
 
 interface BlogCardProps {
   id: number;

@@ -1,7 +1,5 @@
 import { RoundIconButton } from "./Button";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import Subtract from "/icons/HD_icon/Subtract.svg";
 import React from "react";
 
 interface CardProps {
@@ -20,12 +18,6 @@ export const OurTeamCard: React.FC<CardProps> = ({
   defaultIcon,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate(`/about/${id}`);
-  };
-
   return (
     <div className="flex flex-col">
       <div className="w-full md:w-[300px] lg:w-[380px] lg:h-[350px] overflow-hidden rounded-xl">
@@ -33,7 +25,6 @@ export const OurTeamCard: React.FC<CardProps> = ({
           className="relative transition-all cursor-pointer"
           onMouseEnter={() => setIsHovered(true)}
           onMouseLeave={() => setIsHovered(false)}
-          onClick={handleClick}
         >
           <div className="w-full duration-500 ease-in-out hover:scale-105 h-auto md:h-[200px] object-cover">
             <img src={imageUrl} alt={name} />
