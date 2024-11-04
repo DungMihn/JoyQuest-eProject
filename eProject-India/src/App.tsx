@@ -40,8 +40,8 @@ const App = () => {
         {/* Page content */}
       </div>
       <Routes>
-        <Route path="" element={<MainLayout />}>
-          <Route path="/" element={<Home />} />
+        <Route path="/" element={<MainLayout />}>
+          <Route index element={<Home />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<D_BlogPage />} />
           <Route path="/blog/:id" element={<BlogDetails />} />
