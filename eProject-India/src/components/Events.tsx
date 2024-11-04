@@ -1,8 +1,18 @@
 import { CiCalendar } from "react-icons/ci";
 import { CustomButton2 } from "./Button";
 import { GiHiking } from "react-icons/gi";
+import React, { useState } from "react";
+import BookingModal from "./BookingModel";
 
 const Events = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [currentEvent, setCurrentEvent] = useState({ name: "", date: "" });
+
+  const openModal = (eventName: string, eventDate: string) => {
+    setCurrentEvent({ name: eventName, date: eventDate });
+    setIsModalOpen(true);
+  };
+
   return (
     <div className="py-[120px]">
       <div className="section-subtitle flex justify-center items-center mb-2">
@@ -16,17 +26,14 @@ const Events = () => {
       </div>
       <div className="event-box mt-7">
         {/*----------------------- Event 1 ---------------------------*/}
-        <div className="flex  items-center justify-center space-x-6 p-4">
-          {/* Div chứa ảnh */}
+        <div className="flex items-center justify-center space-x-6 p-4">
           <div className="w-[586px] md:h-[330px] overflow-hidden rounded-lg">
             <img
-              src="https://duruthemes.com/demo/html/bycamp/img/slider/04.jpg" // Đổi URL này thành đường dẫn ảnh của bạn
+              src="https://duruthemes.com/demo/html/bycamp/img/slider/04.jpg"
               alt="Sample"
               className="w-full transition-transform duration-1000 ease-in-out transform hover:scale-110"
             />
           </div>
-
-          {/* Div nội dung */}
           <div className="w-[586px] lg:p-10 md:h-[300px]">
             <span className="flex items-center text-orangeCustom mb-1">
               <CiCalendar />
@@ -40,14 +47,15 @@ const Events = () => {
               nesun seneoice misuscipit non sagie the fermen ziverra tristiue
               duru iviten onen nivami in the miss acsestion.
             </p>
-            <CustomButton2 text="Book A Ticket" />
+            <CustomButton2
+              text="Book A Ticket"
+              onClick={() => openModal("Kid Summer Camp", "12-20 June")}
+            />
           </div>
         </div>
 
         {/*----------------------- Event 2 ---------------------------*/}
-
         <div className="flex items-center justify-center space-x-6 p-4 md:flex-row lg:flex-row-reverse">
-          {/* Div chứa ảnh */}
           <div className="w-[586px] md:h-[330px] overflow-hidden rounded-lg">
             <img
               src="https://duruthemes.com/demo/html/bycamp/img/slider/05.jpg"
@@ -55,8 +63,6 @@ const Events = () => {
               className="w-full transition-transform duration-1000 ease-in-out transform hover:scale-110"
             />
           </div>
-
-          {/* Div nội dung */}
           <div className="w-[586px] lg:p-10 md:h-[300px]">
             <span className="flex items-center text-orangeCustom mb-1">
               <CiCalendar />
@@ -70,22 +76,22 @@ const Events = () => {
               nesun seneoice misuscipit non sagie the fermen ziverra tristiue
               duru iviten onen nivami in the miss acsestion.
             </p>
-            <CustomButton2 text="Book A Ticket" />
+            <CustomButton2
+              text="Book A Ticket"
+              onClick={() => openModal("Weekend Picnic Camping", "12-20 June")}
+            />
           </div>
         </div>
 
         {/*----------------------- Event 3 ---------------------------*/}
         <div className="flex items-center justify-center space-x-6 p-4">
-          {/* Div chứa ảnh */}
           <div className="w-[586px] md:h-[330px] overflow-hidden rounded-lg">
             <img
-              src="https://duruthemes.com/demo/html/bycamp/img/slider/06.jpg" // Đổi URL này thành đường dẫn ảnh của bạn
+              src="https://duruthemes.com/demo/html/bycamp/img/slider/06.jpg"
               alt="Sample"
               className="w-full transition-transform duration-1000 ease-in-out transform hover:scale-110"
             />
           </div>
-
-          {/* Div nội dung */}
           <div className="w-[586px] lg:p-10 md:h-[300px]">
             <span className="flex items-center text-orangeCustom mb-1">
               <CiCalendar />
@@ -99,10 +105,21 @@ const Events = () => {
               nesun seneoice misuscipit non sagie the fermen ziverra tristiue
               duru iviten onen nivami in the miss acsestion.
             </p>
-            <CustomButton2 text="Book A Ticket" />
+            <CustomButton2
+              text="Book A Ticket"
+              onClick={() => openModal("Trekking and Camp", "12-20 June")}
+            />
           </div>
         </div>
       </div>
+
+      {/* Booking Modal */}
+      <BookingModal
+        eventName={currentEvent.name}
+        eventDate={currentEvent.date}
+        isOpen={isModalOpen}
+        onClose={() => setIsModalOpen(false)}
+      />
     </div>
   );
 };

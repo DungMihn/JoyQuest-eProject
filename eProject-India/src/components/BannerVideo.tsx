@@ -1,6 +1,10 @@
 import { CustomButton3 } from "./Button";
 import { FaWhatsapp } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import React from "react";
+
 const BannerVideo = () => {
+  const navigate = useNavigate();
   return (
     <div className="relative">
       <video
@@ -24,7 +28,10 @@ const BannerVideo = () => {
           Join us for a Fun-Filled Summer Adventure!
         </p>
         <button className="mt-4 sm:mt-6 md:mt-8">
-          <CustomButton3 text="Discover" />
+          <CustomButton3
+            onClick={() => navigate("/itinerary")}
+            text="Discover"
+          />
         </button>
       </div>
 

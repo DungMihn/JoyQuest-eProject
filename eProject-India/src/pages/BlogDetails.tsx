@@ -4,7 +4,8 @@ import { IoIosCalendar } from "react-icons/io";
 import { MdOutlineSpeakerNotes } from "react-icons/md";
 import { IoMdPaperPlane } from "react-icons/io";
 import { CustomButton } from "../components/Button";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
+import { useForm, SubmitHandler } from "react-hook-form";
 
 function BlogDetails() {
   const { id } = useParams<{ id: string }>();
@@ -19,10 +20,27 @@ function BlogDetails() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Setup react-hook-form
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+    reset, // Để reset form
+  } = useForm<{ name: string; email: string; message: string }>();
+
+  const onSubmit: SubmitHandler<{
+    name: string;
+    email: string;
+    message: string;
+  }> = (data) => {
+    console.log("Comment Data:", data);
+    reset(); // Reset form sau khi submit
+  };
+
   return (
     <div>
       <div
-        className="relative  h-60 md:h-96 bg-fixed bg-center bg-cover flex"
+        className="relative h-60 md:h-96 bg-fixed bg-center bg-cover flex"
         style={{
           backgroundImage: `url(${blog.imageUrl})`,
           backgroundSize: "cover",
@@ -101,29 +119,53 @@ function BlogDetails() {
 
           <div className="flex-1">
             <h3 className="text-2xl mb-6">Leave a Reply</h3>
-            <form className="space-y-4">
-              <div className="flex flex-col md:flex-row gap-5">
+            <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+              <div className="flex flex-col md:flex-row gap-5 font-outfit">
                 <input
+                  {...register("name", { required: "Full Name is required" })}
                   type="text"
-                  name="name"
                   placeholder="Full Name *"
                   className="w-full md:w-1/2 px-4 py-4 rounded-full placeholder-gray-500 bg-white border border-gray-300 font-outfit"
-                  required
                 />
+                {errors.name && (
+                  <p className="text-red-500 text-sm font-outfit">
+                    {errors.name.message}
+                  </p>
+                )}
                 <input
+                  {...register("email", {
+                    required: "Email Address is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Invalid email format",
+                    },
+                  })}
                   type="email"
-                  name="email"
                   placeholder="Email Address *"
                   className="w-full md:w-1/2 px-4 py-4 rounded-full placeholder-gray-500 bg-white border border-gray-300 font-outfit"
-                  required
                 />
+                {errors.email && (
+                  <p className="text-red-500 text-sm font-outfit">
+                    {errors.email.message}
+                  </p>
+                )}
               </div>
               <textarea
-                name="message"
+                {...register("message", {
+                  required: "Your Comment is required",
+                  minLength: {
+                    value: 10,
+                    message: "Comment must be at least 10 characters",
+                  },
+                })}
                 placeholder="Your Comment *"
                 className="w-full px-4 py-4 rounded-3xl placeholder-gray-500 bg-white border border-gray-300 h-32 font-outfit"
-                required
               ></textarea>
+              {errors.message && (
+                <p className="text-red-500 text-sm font-outfit">
+                  {errors.message.message}
+                </p>
+              )}
               <div>
                 <CustomButton
                   icon={<IoMdPaperPlane size={20} />}

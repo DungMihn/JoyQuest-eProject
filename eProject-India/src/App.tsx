@@ -22,6 +22,7 @@ import D_VisitorCounter from "./components/D_VisitorCounter";
 import About from "./pages/AboutPage";
 import Faqs from "./pages/FaqsPage";
 import Error from "./pages/ErrorPage";
+import ScrollToTop from "./components/ScrollToTop";
 
 const App = () => {
   return (
@@ -39,9 +40,13 @@ const App = () => {
         <D_VisitorCounter />
         {/* Page content */}
       </div>
+      {/* Include ScrollToTop component */}
+      <div>
+        <ScrollToTop />
+      </div>
       <Routes>
-        <Route path="/" element={<MainLayout />}>
-          <Route index element={<Home />} />
+        <Route path="" element={<MainLayout />}>
+          <Route path="/" element={<Home />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/blog" element={<D_BlogPage />} />
           <Route path="/blog/:id" element={<BlogDetails />} />

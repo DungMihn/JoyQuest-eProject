@@ -1,12 +1,14 @@
 import { useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
-import { CustomButton } from "./Button";
+import { CustomButton } from "./Button"; // Make sure this is the correct path for your button component
 import { BsCalendar2Check } from "react-icons/bs";
 import { IoInformationCircle } from "react-icons/io5";
 import { useForm, SubmitHandler } from "react-hook-form";
 import React from "react";
 
-interface BookingFormProps {
+interface BookingModalProps {
+  eventName: string;
+  eventDate: string;
   isOpen: boolean;
   onClose: () => void;
 }
@@ -15,13 +17,15 @@ interface FormData {
   fullName: string;
   email: string;
   contactNumber: string;
-  reservationType: string;
-  checkIn: string;
-  checkOut: string;
   additionalNote: string;
 }
 
-const BookingForm: React.FC<BookingFormProps> = ({ isOpen, onClose }) => {
+const BookingModal: React.FC<BookingModalProps> = ({
+  eventName,
+  eventDate,
+  isOpen,
+  onClose,
+}) => {
   const [isVisible, setIsVisible] = useState(false);
 
   const {
@@ -42,7 +46,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isOpen, onClose }) => {
   const onSubmit: SubmitHandler<FormData> = (data) => {
     console.log("Form submitted successfully:", data);
     reset();
-    onClose(); // Close the form after submission
+    onClose(); // Close the modal after submission
   };
 
   if (!isVisible) return null;
@@ -60,8 +64,11 @@ const BookingForm: React.FC<BookingFormProps> = ({ isOpen, onClose }) => {
       >
         <div className="flex justify-between items-center text-[#fff] p-4 sm:p-6 md:p-8 mb-4 bg-greenCustom">
           <h2 className="text-[18px] sm:text-[20px] md:text-[24px]">
-            Book A Place
+            Booking for: {eventName}
           </h2>
+          <h3 className="text-[16px] sm:text-[18px] md:text-[20px]">
+            Date: {eventDate}
+          </h3>
           <button onClick={onClose}>
             <IoMdClose size={24} className="sm:size-30" />
           </button>
@@ -130,68 +137,6 @@ const BookingForm: React.FC<BookingFormProps> = ({ isOpen, onClose }) => {
                 </p>
               )}
             </div>
-            <div>
-              <select
-                {...register("reservationType", {
-                  required: "Reservation Type is required",
-                })}
-                className="w-full px-4 py-2 rounded-full placeholder:text-black bg-[#fff] border-[#ccc] font-outfit border"
-              >
-                <option className="font-outfit " value="">
-                  Reservation Type
-                </option>
-                <option className="font-outfit">Single Room</option>
-                <option className="font-outfit">Double Room</option>
-                <option className="font-outfit">Suite</option>
-              </select>
-              {errors.reservationType && (
-                <p className="text-red-500 text-sm font-outfit">
-                  {errors.reservationType.message}
-                </p>
-              )}
-            </div>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <div>
-              <label
-                className="block p-2 text-sm sm:text-base"
-                htmlFor="checkIn"
-              >
-                Check In
-              </label>
-              <input
-                {...register("checkIn", {
-                  required: "Check In date is required",
-                })}
-                type="date"
-                className="w-full px-4 py-2 rounded-full placeholder:text-black bg-[#fff] border-[#ccc] border font-outfit"
-              />
-              {errors.checkIn && (
-                <p className="text-red-500 text-sm font-outfit">
-                  {errors.checkIn.message}
-                </p>
-              )}
-            </div>
-            <div>
-              <label
-                className="block p-2 text-sm sm:text-base"
-                htmlFor="checkOut"
-              >
-                Check Out
-              </label>
-              <input
-                {...register("checkOut", {
-                  required: "Check Out date is required",
-                })}
-                type="date"
-                className="w-full px-4 py-2 rounded-full placeholder:text-black bg-[#fff] border-[#ccc] border font-outfit"
-              />
-              {errors.checkOut && (
-                <p className="text-red-500 text-sm font-outfit">
-                  {errors.checkOut.message}
-                </p>
-              )}
-            </div>
           </div>
           <textarea
             {...register("additionalNote")}
@@ -206,7 +151,7 @@ const BookingForm: React.FC<BookingFormProps> = ({ isOpen, onClose }) => {
             </p>
             <CustomButton
               icon={<BsCalendar2Check size={20} />}
-              text="Book Your Stay Now"
+              text="Confirm Booking"
             />
           </div>
         </form>
@@ -215,4 +160,4 @@ const BookingForm: React.FC<BookingFormProps> = ({ isOpen, onClose }) => {
   );
 };
 
-export default BookingForm;
+export default BookingModal;

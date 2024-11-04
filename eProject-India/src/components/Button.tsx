@@ -2,6 +2,7 @@ import { AiTwotoneCalendar } from "react-icons/ai";
 import { MdArrowOutward } from "react-icons/md";
 import { GiForestCamp } from "react-icons/gi";
 import { RiGameFill } from "react-icons/ri";
+import React from "react";
 
 interface ButtonProps {
   text?: string;
@@ -55,7 +56,7 @@ export const ButtonBooking: React.FC<ButtonProps> = ({ onClick }) => {
   return (
     <button
       onClick={onClick}
-      className="flex items-center justify-center bg-[#f2682a] text-[#fff] font-medium lg:py-[12px] py-2 px-3 lg:px-[24px] rounded-full transition-transform duration-300 hover:bg-[#5b9a42] hover:text-white hover:-translate-y-1 border-none md:text-[9px] text-[7px] lg:text-[15px]"
+      className="flex items-center justify-center bg-[#f2682a] text-[#fff] font-medium lg:py-[12px] py-2 px-3 lg:px-[24px] rounded-full transition-transform duration-300 hover:bg-[#5b9a42] hover:text-white hover:-translate-y-1 border-none md:text-[9px] text-[7px] lg:text-[15px] whitespace-nowrap"
     >
       <AiTwotoneCalendar className="mr-2" />
       Book Now
