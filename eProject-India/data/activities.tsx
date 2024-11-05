@@ -1,4 +1,5 @@
 import { RiGameFill } from "react-icons/ri";
+import React from "react";
 
 export const activities = [
   {
@@ -31,11 +32,11 @@ export const activities = [
   },
   {
     id: 2,
-    title: "Hiking",
+    title: "Camping",
     description: "Discover breathtaking views with guided hiking tours.",
     imageUrl: "https://duruthemes.com/demo/html/bycamp/img/activities/2.jpg",
     defaultIcon: <RiGameFill size={30} className="text-[#fff]" />,
-    materials: ["Hiking boots", "backpack", "water bottle"],
+    materials: ["Tent", "sleeping bags", "cooking supplies"],
     timeRequired: "2 hours",
     instructions: "Stay on the marked trail and enjoy the scenery.",
     categories: ["Outdoor Games"],
@@ -59,13 +60,14 @@ export const activities = [
   },
   {
     id: 3,
-    title: "Camping",
-    description: "Relax under the stars with our premium camping trips.",
+    title: "Music",
+    description:
+      "Enjoy live music sessions under the stars with a cozy campfire.",
     imageUrl: "https://duruthemes.com/demo/html/bycamp/img/activities/3.jpg",
     defaultIcon: <RiGameFill size={30} className="text-[#fff]" />,
-    materials: ["Tent", "sleeping bags", "cooking supplies"],
-    timeRequired: "2 days",
-    instructions: "Set up your tent and enjoy a campfire in the evening.",
+    materials: ["Portable speaker", "camp chairs", "blankets"],
+    timeRequired: "3 hours",
+    instructions: "Bring your own instruments or enjoy our curated playlist.",
     categories: ["Outdoor Games", "Family Games"],
     images: [
       {
@@ -87,8 +89,8 @@ export const activities = [
   },
   {
     id: 4,
-    title: "Kayaking",
-    description: "Experience the thrill of kayaking in beautiful waters.",
+    title: "Adventure",
+    description: "Experience the thrill of kayaking on beautiful lakes.",
     imageUrl: "https://duruthemes.com/demo/html/bycamp/img/activities/4.jpg",
     defaultIcon: <RiGameFill size={30} className="text-[#fff]" />,
     materials: ["Kayak", "paddle", "life jacket"],
@@ -116,14 +118,14 @@ export const activities = [
   },
   {
     id: 5,
-    title: "Rock Climbing",
-    description:
-      "Challenge yourself with our indoor and outdoor rock climbing activities.",
+    title: "Diving",
+    description: "Dive into the underwater world with our guided diving tours.",
     imageUrl: "https://duruthemes.com/demo/html/bycamp/img/activities/5.jpg",
     defaultIcon: <RiGameFill size={30} className="text-[#fff]" />,
-    materials: ["Climbing shoes", "chalk", "harness"],
-    timeRequired: "2 hours",
-    instructions: "Warm up before climbing and use proper techniques.",
+    materials: ["Diving mask", "wet suit", "air tank"],
+    timeRequired: "3 hours",
+    instructions:
+      "Ensure safety gear is secure before diving and stay with your buddy.",
     categories: ["Outdoor Games"],
     images: [
       {
