@@ -1,5 +1,6 @@
 import { FaCampground, FaFire, FaHiking } from "react-icons/fa";
 import { GiHiking } from "react-icons/gi";
+import React from "react";
 
 const About = () => {
   return (
@@ -14,13 +15,13 @@ const About = () => {
         </div>
 
         <div className="section-title font-medium text-3xl lg:text-4xl mb-4">
-          About the byCamp
+          About the JoyQuest
         </div>
 
         <div className="font-outfit section-content mb-10 text-base lg:text-lg">
-          Lorem ipsum amet nisl quam nestibulum the quam odiomise fermen
-          sceisuenta the miss ulatio varius natoque fermen themanis
-          sarturiention monte duru fermen.
+          JoyQuest brings joy and adventure to life with games, activities, and
+          experiences for all ages. Discover fun and create unforgettable
+          memories with us!
         </div>
 
         {/* Các icon */}
